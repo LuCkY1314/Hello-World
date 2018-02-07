@@ -1,4 +1,4 @@
-package com.example.siqingchan.newtest;
+package com.example.testmodule;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.siqingchan.newtest", appContext.getPackageName());
+        assertEquals("com.example.testmodule.test", appContext.getPackageName());
     }
 }

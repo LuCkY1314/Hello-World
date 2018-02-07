@@ -1,4 +1,4 @@
-package com.example.siqingchan.newtest;
+package com.example.testmodule;
 
 import org.junit.Test;
 
