@@ -1,10 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.0"
     defaultConfig {
-        applicationId "com.example.anjuke.myapplication"
+        //applicationId "com.example.anjuke.myapplication"
         minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
@@ -16,14 +16,6 @@ android {
         repositories {
             jcenter()
             maven { url 'https://www.jitpack.io' }
-        }
-    }
-    productFlavors {
-        publish {
-            applicationIdSuffix ".publish"
-        }
-        oringin {
-            applicationIdSuffix ".test"
         }
     }
     buildTypes {
@@ -47,5 +39,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    oringinCompile project(':testmodule')
+    compile project(':testmodule')
 }
