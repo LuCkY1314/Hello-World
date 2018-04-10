@@ -26,6 +26,10 @@
         <service
             android:name=".MyService"
             android:process=":service" />
+
+        <service
+            android:name=".BookManagerService"
+            android:process=":remote" />
     </application>
 
 </manifest>
