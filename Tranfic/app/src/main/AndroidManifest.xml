@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="siqingchan.transic">
 
+    <permission
+        android:name="siqingchan.transic.MY_PERMISSION"
+        android:protectionLevel="normal" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,6 +34,7 @@
         <service
             android:name=".BookManagerService"
             android:exported="true"
+            android:permission="siqingchan.transic.MY_PERMISSION"
             android:process=":remote" />
     </application>
 
