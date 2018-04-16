@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="transic.scrollinterceptsample">
 
+    <uses-permission android:name="siqingchan.transic.MY_PERMISSION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
