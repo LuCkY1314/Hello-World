@@ -15,6 +15,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import siqingchan.transic.aidl.Book;
+import siqingchan.transic.aidl.IBookManager;
+import siqingchan.transic.aidl.IOnNewBookArrivedListener;
+
 public class SecondActivity extends AppCompatActivity {
     private TextView textView;
     private ServiceConnection connection;

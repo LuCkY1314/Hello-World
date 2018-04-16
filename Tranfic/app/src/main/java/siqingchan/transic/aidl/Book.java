@@ -1,4 +1,4 @@
-package siqingchan.transic;
+package siqingchan.transic.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;

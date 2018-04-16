@@ -13,6 +13,10 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import siqingchan.transic.aidl.Book;
+import siqingchan.transic.aidl.IBookManager;
+import siqingchan.transic.aidl.IOnNewBookArrivedListener;
+
 /**
  * Created by siqingchan on 2018/4/10.
  * mail:gonejobfindme@163.com

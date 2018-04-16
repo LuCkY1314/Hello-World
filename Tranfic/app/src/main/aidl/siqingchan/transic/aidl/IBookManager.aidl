@@ -1,6 +1,7 @@
 // IBookManager.aidl
-package transic.scrollinterceptsample;
-import transic.scrollinterceptsample.Book;
+package siqingchan.transic.aidl;
+import siqingchan.transic.aidl.Book;
+import siqingchan.transic.aidl.IOnNewBookArrivedListener;
 // Declare any non-default types here with import statements
 
 interface IBookManager {
@@ -10,4 +11,6 @@ interface IBookManager {
      */
     List<Book> getBookList();
     void addBook(in Book book);
+    void registerListener(IOnNewBookArrivedListener listener);
+    void unregisterListener(IOnNewBookArrivedListener listener);
 }

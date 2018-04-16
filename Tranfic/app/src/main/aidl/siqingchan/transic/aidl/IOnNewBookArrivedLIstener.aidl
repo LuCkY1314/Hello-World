@@ -1,6 +1,6 @@
 // IOnNewBookArrivedLIstener.aidl
-package siqingchan.transic;
-import siqingchan.transic.Book;
+package siqingchan.transic.aidl;
+import siqingchan.transic.aidl.Book;
 // Declare any non-default types here with import statements
 
 interface IOnNewBookArrivedListener {
