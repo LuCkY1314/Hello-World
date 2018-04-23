@@ -11,6 +11,8 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -27,13 +29,27 @@ public class SecondActivity extends AppCompatActivity {
     private IBookManager rootManager;
     private IOnNewBookArrivedListener listener;
     private Handler handler;
-
+    private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         textView = findViewById(R.id.text);
         textView.setText("second" + User.count);
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rootManager != null) {
+                    try {
+                        List<Book> list = rootManager.getBookList();
+                        Log.d(TAG, list.size() + "");
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
