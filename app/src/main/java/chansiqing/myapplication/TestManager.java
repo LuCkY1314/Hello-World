@@ -6,7 +6,6 @@ public class TestManager {
     //单例静态特性使得单例的生命周期和应用的生命周期一样长
     private static TestManager instance;
     private Context context;
- 
     /**
      * 传入的Context的生命周期很重要：
      *   如果传入的是Application的Context，则生命周期和单例生命周期一样长；
