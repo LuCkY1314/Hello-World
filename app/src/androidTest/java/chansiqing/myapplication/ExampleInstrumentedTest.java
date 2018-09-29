@@ -29,7 +29,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void testActivity() throws InterruptedException {
         Context appContext = InstrumentationRegistry.getTargetContext();
-        Intent intent = new Intent(appContext, DrawActivity.class);
+        Intent intent = new Intent(appContext, RecycleViewTestActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         appContext.startActivity(intent);
         sleep(30000);
