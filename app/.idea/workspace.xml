@@ -2,204 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68e39e29-9bf2-4f67-85f3-d52659374a47" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_0_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_0_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_0_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_1_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_drawee_0_14_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_fbcore_0_14_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_fresco_0_14_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_0_14_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_base_0_14_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_haha_haha_2_0_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_analyzer_1_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_android_1_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_android_no_op_1_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_watcher_1_4_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_2_51_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_51_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_2_51_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/RecycleViewTestActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_test.xml" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change beforePath="$PROJECT_DIR$/../.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/../.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/../.idea/runConfigurations.xml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.gitignore" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/modules.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/.idea/runConfigurations.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/.gitignore" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/build.gradle" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/proguard-rules.pro" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/androidTest/java/transic/scrollinterceptsample/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/androidTest/java/transic/scrollinterceptsample/ExampleInstrumentedTest.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/aidl/siqingchan/transic/aidl/Book.aidl" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/aidl/siqingchan/transic/aidl/Book.aidl" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/aidl/siqingchan/transic/aidl/IBookManager.aidl" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/aidl/siqingchan/transic/aidl/IBookManager.aidl" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/siqingchan/transic/aidl/Book.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/siqingchan/transic/aidl/Book.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/BaseFragment.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/BaseFragment.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/Main2Activity.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/Main2Activity.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MainActivity.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MyAdapter.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MyAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MyViewPager.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/java/transic/scrollinterceptsample/MyViewPager.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/drawable/ic_launcher_background.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/drawable/ic_launcher_background.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/activity_main2.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/activity_main2.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/fragment_layout.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/layout/fragment_layout.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/test/java/transic/scrollinterceptsample/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/app/src/test/java/transic/scrollinterceptsample/ExampleUnitTest.java" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/build.gradle" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/gradle.properties" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/gradle.properties" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/gradle/wrapper/gradle-wrapper.jar" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/gradle/wrapper/gradle-wrapper.properties" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/gradlew.bat" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/gradlew.bat" />
-      <change beforePath="$PROJECT_DIR$/../ScrollInterceptSample/settings.gradle" afterPath="$PROJECT_DIR$/../ScrollInterceptSample/settings.gradle" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.gitignore" afterPath="$PROJECT_DIR$/../Tranfic/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../Tranfic/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../Tranfic/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Tranfic/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Tranfic/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/../Tranfic/.idea/runConfigurations.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/.gitignore" afterPath="$PROJECT_DIR$/../Tranfic/app/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/build.gradle" afterPath="$PROJECT_DIR$/../Tranfic/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/../Tranfic/app/proguard-rules.pro" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/androidTest/java/siqingchan/transic/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/androidTest/java/siqingchan/transic/ExampleInstrumentedTest.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/Book.aidl" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/Book.aidl" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/IBookManager.aidl" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/IBookManager.aidl" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/IOnNewBookArrivedLIstener.aidl" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/aidl/siqingchan/transic/aidl/IOnNewBookArrivedLIstener.aidl" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/BookManagerService.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/BookManagerService.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MainActivity.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MyConstance.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MyConstance.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MyService.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/MyService.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/SecondActivity.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/SecondActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/ThirdActivity.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/ThirdActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/User.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/User.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/aidl/Book.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/java/siqingchan/transic/aidl/Book.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/drawable/ic_launcher_background.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/drawable/ic_launcher_background.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_second.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_second.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_third.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/layout/activity_third.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../Tranfic/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/app/src/test/java/siqingchan/transic/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/../Tranfic/app/src/test/java/siqingchan/transic/ExampleUnitTest.java" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/build.gradle" afterPath="$PROJECT_DIR$/../Tranfic/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/gradle.properties" afterPath="$PROJECT_DIR$/../Tranfic/gradle.properties" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/../Tranfic/gradle/wrapper/gradle-wrapper.jar" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/../Tranfic/gradle/wrapper/gradle-wrapper.properties" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/gradlew.bat" afterPath="$PROJECT_DIR$/../Tranfic/gradlew.bat" />
-      <change beforePath="$PROJECT_DIR$/../Tranfic/settings.gradle" afterPath="$PROJECT_DIR$/../Tranfic/settings.gradle" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" afterPath="$PROJECT_DIR$/proguard-rules.pro" />
-      <change beforePath="$PROJECT_DIR$/src/androidTest/java/chansiqing/myapplication/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/src/androidTest/java/chansiqing/myapplication/ExampleInstrumentedTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/Ad.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/Ad.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/DrawActivity.kt" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/DrawActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/Entity.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/Entity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FileUtils.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FileUtils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FirstKotlin.kt" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FirstKotlin.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FirstKotlinInterface.kt" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/FirstKotlinInterface.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/KotlinTest.kt" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/KotlinTest.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/LeakManager.kt" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/LeakManager.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MaidianData.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MaidianData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyApplication.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyApplication.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyThread.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyThread.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyThread1.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/MyThread1.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/TestInterface.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/TestInterface.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/TestManager.java" afterPath="$PROJECT_DIR$/src/main/java/chansiqing/myapplication/TestManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterPath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_background.xml" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_background.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_draw.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_draw.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/include_view.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/include_view.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_list.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/item_list.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_photo.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/item_photo.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/chansiqing/myapplication/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/chansiqing/myapplication/ExampleUnitTest.java" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" afterPath="$PROJECT_DIR$/../build.gradle" />
-      <change beforePath="$PROJECT_DIR$/../gradle.properties" afterPath="$PROJECT_DIR$/../gradle.properties" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" />
-      <change beforePath="$PROJECT_DIR$/../gradlew" afterPath="$PROJECT_DIR$/../gradlew" />
-      <change beforePath="$PROJECT_DIR$/../gradlew.bat" afterPath="$PROJECT_DIR$/../gradlew.bat" />
-      <change beforePath="$PROJECT_DIR$/../settings.gradle" afterPath="$PROJECT_DIR$/../settings.gradle" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -245,7 +48,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="190">
               <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding />
             </state>
@@ -2439,13 +2242,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23089983" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23089983" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2528,7 +2331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="190">
           <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding />
         </state>
