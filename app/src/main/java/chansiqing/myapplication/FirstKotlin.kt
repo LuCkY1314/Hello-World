@@ -69,8 +69,8 @@ class FirstKotlin : AppCompatActivity(), LeakManager.Companion.LeakListener {
                 holder.nameView.text = myData?.name ?: ""
                 holder.ageView.text = myData?.age ?: ""
                 holder.nameView.setOnClickListener {
-                    val intent = Intent(context, DrawActivity::class.java)
-                    context.startActivity(intent)
+                    //val intent = Intent(context, DrawActivity::class.java)
+                    //context.startActivity(intent)
                 }
             }
         }

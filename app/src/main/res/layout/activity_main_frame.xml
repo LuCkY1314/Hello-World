@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<layout>
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+
+        <import type="chansiqing.myapplication.databinding.viewModel.MainFrameViewModel"/>
+
+        <variable
+            name="item"
+            type="chansiqing.myapplication.databinding.data.MainFrameData"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@{item.getSimpleBtnName}"
+            android:visibility="@{MainFrameViewModel.isVisible(item.isSimpleBtnVisible)}"/>
+    </RelativeLayout>
+</layout>
