@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.example.chansiqing.databindingstudy.viewModel.MainFramePresenter"/>
+
+        <variable
+            name="presenter"
+            type="com.example.chansiqing.databindingstudy.viewModel.MainFramePresenter"/>
+
+        <variable
+            name="item"
+            type="com.example.chansiqing.databindingstudy.data.MainFrameData"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@{item.btn1.marginHorizon}"
+            android:onClick="@{presenter::onClick}"
+            android:text="@{item.btn1.getSimpleBtnName}"
+            android:visibility="@{MainFramePresenter.isVisible(item.btn1.isSimpleBtnVisible)}"/>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@{item.btn2.marginHorizon}"
+            android:onClick="@{()->presenter.onClick(btn2,item.btn2)}"
+            android:text="@{item.btn2.getSimpleBtnName}"
+            android:visibility="@{MainFramePresenter.isVisible(item.btn2.isSimpleBtnVisible)}"/>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btn2"
+            android:layout_marginLeft="@{item.btn3.marginHorizon}"
+            android:layout_marginTop="@{item.btn3.marginVertical}"
+            android:onClick="@{presenter.onClick}"
+            android:text="@{item.btn3.getSimpleBtnName}"
+            android:visibility="@{MainFramePresenter.isVisible(item.btn3.isSimpleBtnVisible)}"/>
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/btn3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@{item.btn4.marginHorizon}"
+            android:onClick="@{(view)->presenter.onClick(view)}"
+            android:text="@{item.btn4.getSimpleBtnName}"
+            android:visibility="@{MainFramePresenter.isVisible(item.btn4.isSimpleBtnVisible)}"/>
+
+    </RelativeLayout>
+</layout>
