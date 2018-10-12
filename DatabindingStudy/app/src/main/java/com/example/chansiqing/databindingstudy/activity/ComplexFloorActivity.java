@@ -14,10 +14,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
+
 import com.example.chansiqing.databindingstudy.R;
+import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.FlipperData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityComplexFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ViewFlipperChildBinding;
+import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
+import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
@@ -32,11 +37,13 @@ import com.facebook.drawee.generic.RoundingParams;
 public class ComplexFloorActivity extends AppCompatActivity {
     private static final String url = "https://m.360buyimg.com/mobilecms/jfs/t23650/360/507299913/19947/9d079f65/5b3349d7n36ef9fdb.jpg!q70.jpg.webp";
     private GenericDraweeHierarchy hierarchy;
+    private LinearLayout.LayoutParams linearLayoutParam;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hierarchy = getGenericDraweeHierarchy();
+        linearLayoutParam = getLinearLayoutParam();
         ActivityComplexFloorBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_complex_floor);
         initViewSetting(binding);
         initMockData(binding);
@@ -57,6 +64,13 @@ public class ComplexFloorActivity extends AppCompatActivity {
                 binding.flipper.addView(view);
             }
         }
+
+        AutoAdapterFloorData data = new AutoAdapterFloorData();
+        data.setText("开始测试");
+        data.setNeedColor(true);
+        AutoAdapterFloor autoAdapterFloor = new AutoAdapterFloor(this);
+        binding.content.addView(autoAdapterFloor, linearLayoutParam);
+        autoAdapterFloor.setData(data);
     }
 
     /**
@@ -101,4 +115,14 @@ public class ComplexFloorActivity extends AppCompatActivity {
         return mHierarchy;
     }
 
+    /**
+     * 提供公共LinearLayout.layoutParam
+     *
+     * @return
+     */
+    public final LinearLayout.LayoutParams getLinearLayoutParam() {
+        LinearLayout.LayoutParams linearLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        linearLayoutParam.setMargins(0, UIUtil.dp2px(20), 0, 0);
+        return linearLayoutParam;
+    }
 }

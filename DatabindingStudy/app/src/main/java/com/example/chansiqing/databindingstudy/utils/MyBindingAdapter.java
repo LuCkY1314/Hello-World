@@ -11,6 +11,7 @@ package com.example.chansiqing.databindingstudy.utils;
 import android.databinding.BindingAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * TODO:功能说明
@@ -46,4 +47,5 @@ public class MyBindingAdapter {
         layoutParams.setMargins(layoutParams.leftMargin, layoutParams.topMargin, layoutParams.rightMargin, bottomMargin);
         view.setLayoutParams(layoutParams);
     }
+
 }
