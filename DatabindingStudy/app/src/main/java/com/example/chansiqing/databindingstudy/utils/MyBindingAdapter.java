@@ -9,9 +9,17 @@
 package com.example.chansiqing.databindingstudy.utils;
 
 import android.databinding.BindingAdapter;
+import android.databinding.BindingConversion;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
+import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.w3c.dom.Text;
 
 /**
  * TODO:功能说明
@@ -48,4 +56,15 @@ public class MyBindingAdapter {
         view.setLayoutParams(layoutParams);
     }
 
+    //=====================================自定义全局方法========================================================================
+    @BindingAdapter("android:src")
+    public static void setSrc(ImageView view, int drawableResId) {
+        view.setImageResource(drawableResId);
+    }
+
+    @BindingAdapter("frescoOnly:image_url")
+    public static void setImageUrl(SimpleDraweeView view, String url) {
+        if (TextUtils.isEmpty(url))return;
+        view.setImageURI(url);
+    }
 }

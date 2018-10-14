@@ -8,8 +8,12 @@
 
 package com.example.chansiqing.databindingstudy.data;
 
+import android.databinding.Bindable;
+import android.databinding.PropertyChangeRegistry;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.chansiqing.databindingstudy.BR;
 
 import java.util.Observable;
 
@@ -19,14 +23,41 @@ import java.util.Observable;
  * @author: chansiqing
  * @date: 2018-10-10 10:40
  */
-public class AllFloorData extends Observable implements Parcelable{
+public class AllFloorData extends Observable implements Parcelable, android.databinding.Observable {
+    private String text;
+    private transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
+
+    @Bindable
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+        notifyChange(BR.text);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.text);
+    }
+
+    public AllFloorData() {
+    }
+
     protected AllFloorData(Parcel in) {
+        this.text = in.readString();
     }
 
     public static final Creator<AllFloorData> CREATOR = new Creator<AllFloorData>() {
         @Override
-        public AllFloorData createFromParcel(Parcel in) {
-            return new AllFloorData(in);
+        public AllFloorData createFromParcel(Parcel source) {
+            return new AllFloorData(source);
         }
 
         @Override
@@ -35,12 +66,26 @@ public class AllFloorData extends Observable implements Parcelable{
         }
     };
 
-    @Override
-    public int describeContents() {
-        return 0;
+    private synchronized void notifyChange(int propertyId) {
+        if (propertyChangeRegistry == null) {
+            propertyChangeRegistry = new PropertyChangeRegistry();
+        }
+        propertyChangeRegistry.notifyChange(this, propertyId);
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int i) {
+    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry == null) {
+            propertyChangeRegistry = new PropertyChangeRegistry();
+        }
+        propertyChangeRegistry.add(callback);
+
+    }
+
+    @Override
+    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry != null) {
+            propertyChangeRegistry.remove(callback);
+        }
     }
 }

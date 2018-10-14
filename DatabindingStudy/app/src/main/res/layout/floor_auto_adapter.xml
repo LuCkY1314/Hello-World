@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
-        <import type="java.lang.Integer"/>
-
-        <import type="android.text.TextUtils"/>
 
         <variable
             name="item"
@@ -16,11 +12,11 @@
             type="com.example.chansiqing.databindingstudy.viewModel.AutoAdapterFloorPresenter"/>
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:id="@+id/text"
@@ -52,5 +48,9 @@
             android:layout_marginTop="30dp"
             android:max="100"
             android:progress="@={presenter.countToInt(item.count)}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
 </layout>

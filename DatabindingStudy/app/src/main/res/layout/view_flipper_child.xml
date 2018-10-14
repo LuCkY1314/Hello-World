@@ -6,7 +6,8 @@
   ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
   ~ Vestibulum commodo. Ut rhoncus gravida arcu.
   -->
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:frescoOnly="http://schemas.android.com/tools">
 
     <data>
 
@@ -15,17 +16,18 @@
             type="com.example.chansiqing.databindingstudy.data.FlipperData"/>
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.example.chansiqing.databindingstudy.view.SpecSimpleDrawee
             android:id="@+id/photo"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="20dp"/>
+            frescoOnly:image_url="@{item.url}"/>
 
         <TextView
             android:id="@+id/text"

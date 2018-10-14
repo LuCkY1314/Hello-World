@@ -4,7 +4,7 @@ import android.databinding.InverseMethod;
 import android.text.TextUtils;
 
 /**
- * TODO:功能说明
+ * 双向绑定viewModel
  *
  * @author: chansiqing
  * @date: 2018-10-11 18:02

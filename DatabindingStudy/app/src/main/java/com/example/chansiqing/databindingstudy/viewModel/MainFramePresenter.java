@@ -24,7 +24,7 @@ import com.example.chansiqing.databindingstudy.data.MainFrameData;
  */
 public class MainFramePresenter {
 
-    public static int isVisible(boolean flag) {
+    public int isVisible(boolean flag) {
         return flag ? View.VISIBLE : View.GONE;
     }
 

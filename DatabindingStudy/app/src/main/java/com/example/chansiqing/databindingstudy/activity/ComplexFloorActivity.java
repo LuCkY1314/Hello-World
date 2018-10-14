@@ -18,10 +18,12 @@ import android.widget.LinearLayout;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
+import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FlipperData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityComplexFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ViewFlipperChildBinding;
 import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
+import com.example.chansiqing.databindingstudy.floor.BindingAdapterTestFloor;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
@@ -29,13 +31,14 @@ import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
 
 /**
- * TODO:功能说明
+ * 多楼层实验基地
  *
  * @author: chansiqing
  * @date: 2018-10-10 10:38
  */
 public class ComplexFloorActivity extends AppCompatActivity {
     private static final String url = "https://m.360buyimg.com/mobilecms/jfs/t23650/360/507299913/19947/9d079f65/5b3349d7n36ef9fdb.jpg!q70.jpg.webp";
+    private static final String url2 = "https://m.360buyimg.com/mobilecms/jfs/t19042/334/481621482/316610/571aaa33/5a7c2b43N3dd6ea25.jpeg!q70.jpg.webp";
     private GenericDraweeHierarchy hierarchy;
     private LinearLayout.LayoutParams linearLayoutParam;
 
@@ -71,6 +74,15 @@ public class ComplexFloorActivity extends AppCompatActivity {
         AutoAdapterFloor autoAdapterFloor = new AutoAdapterFloor(this);
         binding.content.addView(autoAdapterFloor, linearLayoutParam);
         autoAdapterFloor.setData(data);
+
+        BindingAdapterTestFloorData data1 = new BindingAdapterTestFloorData();
+        data1.setShowDefault(true);
+        data1.setUrl(url);
+        data1.setUrl2(url2);
+        BindingAdapterTestFloor bindingAdapterTestFloor = new BindingAdapterTestFloor(this);
+        binding.content.addView(bindingAdapterTestFloor, linearLayoutParam);
+        bindingAdapterTestFloor.setData(data1);
+        autoAdapterFloor.setModel(data1);
     }
 
     /**
@@ -82,7 +94,6 @@ public class ComplexFloorActivity extends AppCompatActivity {
     private View initEachFlipperView(FlipperData data) {
         if (data == null) return null;
         ViewFlipperChildBinding childBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.view_flipper_child, null, false);
-        childBinding.photo.setImageURI(data.getUrl());
         childBinding.photo.setHierarchy(hierarchy);
         childBinding.setItem(data);
         return childBinding.getRoot();
