@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <variable
+            name="model"
+            type="com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData"/>
         <variable
             name="item"
             type="com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData"/>
@@ -51,6 +53,9 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_bar"
+            android:layout_marginLeft="20dp"
+            android:text="@{model}"/>
     </RelativeLayout>
 </layout>

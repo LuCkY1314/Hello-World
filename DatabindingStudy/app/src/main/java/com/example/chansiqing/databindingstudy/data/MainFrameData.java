@@ -17,7 +17,7 @@ import android.os.Parcelable;
  * @author: chansiqing
  * @date: 2018-09-30 14:41
  */
-public class MainFrameData implements Parcelable {
+public class MainFrameData extends BaseData {
     private ItemBtnData btn1, btn2, btn3, btn4;
 
     public MainFrameData() {

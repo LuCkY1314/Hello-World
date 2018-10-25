@@ -1,11 +1,8 @@
 package com.example.chansiqing.databindingstudy.data;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.databinding.Observable;
 import android.databinding.PropertyChangeRegistry;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.example.chansiqing.databindingstudy.BR;
 
@@ -15,7 +12,7 @@ import com.example.chansiqing.databindingstudy.BR;
  * @author: chansiqing
  * @date: 2018-10-12 14:53
  */
-public class BindingAdapterTestFloorData extends BaseObservable implements Parcelable, Observable {
+public class BindingAdapterTestFloorData extends BaseData {
     private boolean showDefault;
     private String url;
     private String url2;

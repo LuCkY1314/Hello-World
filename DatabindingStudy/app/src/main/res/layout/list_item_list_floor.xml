@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:frescoOnly="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter"/>
+
+        <variable
+            name="item"
+            type="com.example.chansiqing.databindingstudy.data.ListTestFloorData"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@{presenter.numberToPx(item.marginHorizon)}"
+        android:layout_marginRight="@{presenter.numberToPx(item.marginHorizon)}"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            frescoOnly:image_url="@{item.imgUrl}"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignLeft="@+id/img"
+            android:layout_alignTop="@+id/img"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/img"
+            android:text="@{item.name}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            tools:text="京东好货"/>
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img"
+            android:layout_alignLeft="@+id/name_tv"
+            android:layout_below="@+id/name_tv"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="@{`发布时间：`+presenter.numberToDate(item.time)}"
+            android:textSize="14sp"
+            tools:text="发布时间：2018-10-24"/>
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:text="@{item.price+`元`}"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            tools:text="1024元"/>
+    </RelativeLayout>
+</layout>

@@ -83,6 +83,6 @@ public class AutoAdapterFloor extends LinearLayout {
      */
     public void setModel(BindingAdapterTestFloorData data) {
         if (data == null) return;
-        //binding.setModel(data);
+        binding.setModel(data);
     }
 }

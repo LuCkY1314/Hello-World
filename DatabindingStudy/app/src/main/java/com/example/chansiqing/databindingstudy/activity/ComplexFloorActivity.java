@@ -20,15 +20,20 @@ import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FlipperData;
+import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityComplexFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ViewFlipperChildBinding;
 import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
 import com.example.chansiqing.databindingstudy.floor.BindingAdapterTestFloor;
+import com.example.chansiqing.databindingstudy.floor.ListTestFloor;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 多楼层实验基地
@@ -82,7 +87,20 @@ public class ComplexFloorActivity extends AppCompatActivity {
         BindingAdapterTestFloor bindingAdapterTestFloor = new BindingAdapterTestFloor(this);
         binding.content.addView(bindingAdapterTestFloor, linearLayoutParam);
         bindingAdapterTestFloor.setData(data1);
-        autoAdapterFloor.setModel(data1);
+        //autoAdapterFloor.setModel(data1);
+        List<ListTestFloorData> list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            ListTestFloorData data2 = new ListTestFloorData();
+            data2.setImgUrl(url);
+            data2.setName("京东好货嚯嚯嚯");
+            data2.setPrice("1024");
+            data2.setTime(1538712000 + i * 86400);
+            data2.setMarginHorizon(12);
+            list.add(data2);
+        }
+        ListTestFloor listTestFloor = new ListTestFloor(this);
+        binding.content.addView(listTestFloor, linearLayoutParam);
+        listTestFloor.setData(list);
     }
 
     /**

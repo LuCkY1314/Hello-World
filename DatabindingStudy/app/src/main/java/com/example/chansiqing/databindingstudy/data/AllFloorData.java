@@ -8,14 +8,14 @@
 
 package com.example.chansiqing.databindingstudy.data;
 
+
+import android.annotation.SuppressLint;
 import android.databinding.Bindable;
+import android.databinding.Observable;
 import android.databinding.PropertyChangeRegistry;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.example.chansiqing.databindingstudy.BR;
-
-import java.util.Observable;
 
 /**
  * TODO:功能说明
@@ -23,7 +23,7 @@ import java.util.Observable;
  * @author: chansiqing
  * @date: 2018-10-10 10:40
  */
-public class AllFloorData extends Observable implements Parcelable, android.databinding.Observable {
+public class AllFloorData extends BaseData implements Observable {
     private String text;
     private transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
@@ -35,6 +35,29 @@ public class AllFloorData extends Observable implements Parcelable, android.data
     public void setText(String text) {
         this.text = text;
         notifyChange(BR.text);
+    }
+
+    private synchronized void notifyChange(int propertyId) {
+        if (propertyChangeRegistry == null) {
+            propertyChangeRegistry = new PropertyChangeRegistry();
+        }
+        propertyChangeRegistry.notifyChange(this, propertyId);
+    }
+
+    @Override
+    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry == null) {
+            propertyChangeRegistry = new PropertyChangeRegistry();
+        }
+        propertyChangeRegistry.add(callback);
+
+    }
+
+    @Override
+    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry != null) {
+            propertyChangeRegistry.remove(callback);
+        }
     }
 
     @Override
@@ -65,27 +88,4 @@ public class AllFloorData extends Observable implements Parcelable, android.data
             return new AllFloorData[size];
         }
     };
-
-    private synchronized void notifyChange(int propertyId) {
-        if (propertyChangeRegistry == null) {
-            propertyChangeRegistry = new PropertyChangeRegistry();
-        }
-        propertyChangeRegistry.notifyChange(this, propertyId);
-    }
-
-    @Override
-    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry == null) {
-            propertyChangeRegistry = new PropertyChangeRegistry();
-        }
-        propertyChangeRegistry.add(callback);
-
-    }
-
-    @Override
-    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry != null) {
-            propertyChangeRegistry.remove(callback);
-        }
-    }
 }

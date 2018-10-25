@@ -10,7 +10,6 @@
         xmlns:frescoOnly="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="item"
             type="com.example.chansiqing.databindingstudy.data.FlipperData"/>

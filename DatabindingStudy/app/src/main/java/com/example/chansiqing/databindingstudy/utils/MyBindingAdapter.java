@@ -21,6 +21,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * TODO:功能说明
  *
@@ -56,7 +59,7 @@ public class MyBindingAdapter {
         view.setLayoutParams(layoutParams);
     }
 
-    //=====================================自定义全局方法========================================================================
+    //===================================== 自定义全局方法 ========================================================================
     @BindingAdapter("android:src")
     public static void setSrc(ImageView view, int drawableResId) {
         view.setImageResource(drawableResId);
@@ -64,7 +67,11 @@ public class MyBindingAdapter {
 
     @BindingAdapter("frescoOnly:image_url")
     public static void setImageUrl(SimpleDraweeView view, String url) {
-        if (TextUtils.isEmpty(url))return;
+        if (TextUtils.isEmpty(url)) return;
         view.setImageURI(url);
     }
+
+    //===================================== 自定义转化方法 ================================================================
+
+
 }

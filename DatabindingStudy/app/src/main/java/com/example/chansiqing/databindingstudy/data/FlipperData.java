@@ -8,10 +8,8 @@
 
 package com.example.chansiqing.databindingstudy.data;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.example.chansiqing.databindingstudy.BR;
 
@@ -21,7 +19,7 @@ import com.example.chansiqing.databindingstudy.BR;
  * @author: chansiqing
  * @date: 2018-10-10 11:18
  */
-public class FlipperData extends BaseObservable implements Parcelable {
+public class FlipperData extends BaseData {
     private String url;
     private String text;
 

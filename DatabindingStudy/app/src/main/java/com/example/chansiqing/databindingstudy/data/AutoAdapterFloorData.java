@@ -1,9 +1,7 @@
 package com.example.chansiqing.databindingstudy.data;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.example.chansiqing.databindingstudy.BR;
 
@@ -13,7 +11,7 @@ import com.example.chansiqing.databindingstudy.BR;
  * @author: chansiqing
  * @date: 2018-10-11 14:17
  */
-public class AutoAdapterFloorData extends BaseObservable implements Parcelable {
+public class AutoAdapterFloorData extends BaseData {
     private String text;
     private String count;
     private boolean needColor;
