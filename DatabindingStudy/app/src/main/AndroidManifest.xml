@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ComplexFloorActivity"/>
+        <activity android:name=".activity.MixListActivity"/>
     </application>
 
 </manifest>

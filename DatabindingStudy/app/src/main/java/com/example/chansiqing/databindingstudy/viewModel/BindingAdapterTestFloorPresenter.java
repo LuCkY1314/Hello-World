@@ -15,7 +15,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
  * @author: chansiqing
  * @date: 2018-10-12 15:01
  */
-public class BindingAdapterTestFloorPresenter {
+public class BindingAdapterTestFloorPresenter extends BasePresenter{
     /**
      * 自定义属性binding方法，参数需要一一对应，注解中的参数是xml中使用的属性，可以联合多个属性共同决定一个方法的执行内容
      *

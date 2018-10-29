@@ -1,38 +1,34 @@
 package com.example.chansiqing.databindingstudy.viewModel;
 
-import com.example.chansiqing.databindingstudy.utils.UIUtil;
+import android.support.v7.widget.LinearLayoutManager;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.example.chansiqing.databindingstudy.data.BaseData;
+import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
+import com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple;
+import com.example.chansiqing.databindingstudy.view.MyRecycleView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TODO:功能说明
  *
  * @author: chansiqing
- * @date: 2018-10-24 18:52
+ * @date: 2018-10-26 18:28
  */
 public class ListTestFloorPresenter extends BasePresenter {
     /**
-     * 将下发的时间戳转化成日期
+     * 预先准备好recycleView的adapter和layoutManager
      *
-     * @param millisecond
+     * @param view
+     * @param list
      * @return
      */
-    public String numberToDate(long millisecond) {
-        Date date = new Date();
-        date.setTime(millisecond * 1000);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//24小时制
-        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss");//12小时制
-        return simpleDateFormat.format(date);
-    }
-
-    /**
-     * 将下发的尺寸数据转化成dp为单位的大小
-     *
-     * @param number
-     * @return
-     */
-    public int numberToPx(int number) {
-        return UIUtil.dp2px(number);
+    public ArrayList<ListTestFloorData> prepareAdapter(MyRecycleView view, ArrayList<ListTestFloorData> list) {
+        ListTestFloorListAdapterSimple adapter = new ListTestFloorListAdapterSimple();
+        view.setAdapter(adapter);
+        adapter.setData(list);
+        view.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        return list;
     }
 }

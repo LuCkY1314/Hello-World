@@ -9,7 +9,7 @@ import android.text.TextUtils;
  * @author: chansiqing
  * @date: 2018-10-11 18:02
  */
-public class AutoAdapterFloorPresenter {
+public class AutoAdapterFloorPresenter extends BasePresenter{
     /**
      * 显示count默认值转换
      *

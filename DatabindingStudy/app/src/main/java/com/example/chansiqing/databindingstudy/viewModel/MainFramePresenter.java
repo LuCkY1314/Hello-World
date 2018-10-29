@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.activity.ComplexFloorActivity;
+import com.example.chansiqing.databindingstudy.activity.MixListActivity;
 import com.example.chansiqing.databindingstudy.data.MainFrameData;
 
 /**
@@ -38,6 +39,8 @@ public class MainFramePresenter {
                 break;
             case R.id.btn2:
                 Toast.makeText(view.getContext(), "btn2 fuck click", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(view.getContext(), MixListActivity.class);
+                view.getContext().startActivity(intent2);
                 break;
             case R.id.btn3:
                 Toast.makeText(view.getContext(), "btn3 fuck click", Toast.LENGTH_SHORT).show();
@@ -50,5 +53,7 @@ public class MainFramePresenter {
 
     public void onClick(View view, MainFrameData.ItemBtnData data) {
         Toast.makeText(view.getContext(), data.getSimpleBtnName() + " has been clicked", Toast.LENGTH_SHORT).show();
+        Intent intent2 = new Intent(view.getContext(), MixListActivity.class);
+        view.getContext().startActivity(intent2);
     }
 }

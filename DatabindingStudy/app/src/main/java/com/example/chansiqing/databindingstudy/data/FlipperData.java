@@ -14,7 +14,7 @@ import android.os.Parcel;
 import com.example.chansiqing.databindingstudy.BR;
 
 /**
- * TODO:功能说明
+ * 自动切换动画楼层数据
  *
  * @author: chansiqing
  * @date: 2018-10-10 11:18

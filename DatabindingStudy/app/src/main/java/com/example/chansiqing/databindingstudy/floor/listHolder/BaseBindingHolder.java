@@ -17,6 +17,10 @@ import com.example.chansiqing.databindingstudy.viewModel.BasePresenter;
 public abstract class BaseBindingHolder<K extends BaseData, T extends ViewDataBinding> extends RecyclerView.ViewHolder {
     private T dataBinding;
 
+    public T getDataBinding() {
+        return dataBinding;
+    }
+
     /**
      * 构建每个viewHolder的公共逻辑
      *

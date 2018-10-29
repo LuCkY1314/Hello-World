@@ -9,7 +9,6 @@
 package com.example.chansiqing.databindingstudy.data;
 
 
-import android.annotation.SuppressLint;
 import android.databinding.Bindable;
 import android.databinding.Observable;
 import android.databinding.PropertyChangeRegistry;

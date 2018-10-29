@@ -2,6 +2,7 @@ package com.example.chansiqing.databindingstudy.floor.listAdapter;
 
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,8 +22,8 @@ import java.util.List;
  * @author: chansiqing
  * @date: 2018-10-24 17:17
  */
-public abstract class BaseSimpleBindingListAdapter<K extends BaseData, T extends ViewDataBinding> extends RecyclerView.Adapter<BaseBindingHolder<K, T>> {
-    private List<K> data;
+public abstract class BaseBindingListAdapter<K extends BaseData, T extends ViewDataBinding> extends RecyclerView.Adapter<BaseBindingHolder<K, T>> {
+    protected List<K> data;
 
     @Override
     public BaseBindingHolder<K, T> onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -53,6 +54,7 @@ public abstract class BaseSimpleBindingListAdapter<K extends BaseData, T extends
      */
     public void setData(List<K> data) {
         this.data = data;
+        notifyDataSetChanged();
     }
 
 

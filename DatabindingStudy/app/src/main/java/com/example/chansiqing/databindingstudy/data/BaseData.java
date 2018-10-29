@@ -3,8 +3,10 @@ package com.example.chansiqing.databindingstudy.data;
 import android.databinding.BaseObservable;
 import android.os.Parcelable;
 
+import java.util.Collection;
+
 /**
- * TODO:功能说明
+ * 基本数据类型
  *
  * @author: chansiqing
  * @date: 2018-10-24 17:19

@@ -8,6 +8,8 @@
 
 package com.example.chansiqing.databindingstudy.utils;
 
+import android.view.WindowManager;
+
 import com.example.chansiqing.databindingstudy.activity.MyApp;
 
 /**

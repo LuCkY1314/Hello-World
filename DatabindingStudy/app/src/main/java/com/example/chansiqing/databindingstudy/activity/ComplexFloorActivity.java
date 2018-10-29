@@ -88,7 +88,7 @@ public class ComplexFloorActivity extends AppCompatActivity {
         binding.content.addView(bindingAdapterTestFloor, linearLayoutParam);
         bindingAdapterTestFloor.setData(data1);
         //autoAdapterFloor.setModel(data1);
-        List<ListTestFloorData> list = new ArrayList<>();
+        ArrayList<ListTestFloorData> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             ListTestFloorData data2 = new ListTestFloorData();
             data2.setImgUrl(url);

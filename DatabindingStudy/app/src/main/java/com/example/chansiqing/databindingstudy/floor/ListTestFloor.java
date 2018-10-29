@@ -10,7 +10,10 @@ import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.FloorListTestFloorBinding;
 import com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple;
+import com.example.chansiqing.databindingstudy.BR;
+import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +32,8 @@ public class ListTestFloor extends LinearLayout {
 
     private void init(Context context) {
         binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.floor_list_test_floor, this, true);
-        binding.recycleView.setLayoutManager(new LinearLayoutManager(context));
+        binding.recycle.setLayoutManager(new LinearLayoutManager(context));
+        binding.setPresenter(new ListTestFloorPresenter());
     }
 
     /**
@@ -37,10 +41,10 @@ public class ListTestFloor extends LinearLayout {
      *
      * @param data
      */
-    public void setData(List<ListTestFloorData> data) {
-        ListTestFloorListAdapterSimple adapter = new ListTestFloorListAdapterSimple();
-        adapter.setData(data);
-        binding.recycleView.setAdapter(adapter);
+    public void setData(ArrayList<ListTestFloorData> data) {
+//        ListTestFloorListAdapterSimple adapter = new ListTestFloorListAdapterSimple();
+//        adapter.setData(data);
+//        binding.recycle.setAdapter(adapter);
+        binding.setItem(data);
     }
-
 }

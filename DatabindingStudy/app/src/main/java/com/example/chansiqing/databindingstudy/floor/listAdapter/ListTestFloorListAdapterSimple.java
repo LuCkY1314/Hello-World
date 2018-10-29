@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
-import com.example.chansiqing.databindingstudy.databinding.FloorListTestFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ListItemListFloorBinding;
 import com.example.chansiqing.databindingstudy.floor.listHolder.BaseBindingHolder;
 import com.example.chansiqing.databindingstudy.viewModel.BasePresenter;
-import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter;
+import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorItemPresenter;
 
 /**
  * 列表实验楼层adapter
@@ -22,15 +21,19 @@ import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter;
  * @author: chansiqing
  * @date: 2018-10-24 17:10
  */
-public class ListTestFloorListAdapterSimple extends BaseSimpleBindingListAdapter<ListTestFloorData, ListItemListFloorBinding> {
+public class ListTestFloorListAdapterSimple extends BaseBindingListAdapter<ListTestFloorData, ListItemListFloorBinding> {
 
     @Override
     public BaseBindingHolder<ListTestFloorData, ListItemListFloorBinding> createMyViewHolder(ViewGroup parent, int viewType) {
         return new BaseBindingHolder<ListTestFloorData, ListItemListFloorBinding>((ListItemListFloorBinding) DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.list_item_list_floor, parent, false)) {
             @Override
             public BasePresenter getPresenter() {
-                return new ListTestFloorPresenter();
+                return new ListTestFloorItemPresenter();
             }
         };
+    }
+
+    public static ListTestFloorListAdapterSimple getInstance() {
+        return new ListTestFloorListAdapterSimple();
     }
 }

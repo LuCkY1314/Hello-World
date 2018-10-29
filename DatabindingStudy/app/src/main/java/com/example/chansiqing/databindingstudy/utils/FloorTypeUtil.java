@@ -1,0 +1,13 @@
+package com.example.chansiqing.databindingstudy.utils;
+
+/**
+ * 楼层匹配工具
+ *
+ * @author: chansiqing
+ * @date: 2018-10-26 11:01
+ */
+public class FloorTypeUtil {
+    public final static int FLOOR_AUTO_ADAPTER = 10001; //双向绑定楼层
+    public final static int FLOOR_LIST_TEST = 10002;//列表测试楼层
+    public final static int FLOOR_BINDING_TEST = 10003;//bindingAdapter测试楼层
+}
