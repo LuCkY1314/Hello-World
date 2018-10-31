@@ -15,10 +15,11 @@ import android.widget.Toast;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.activity.ComplexFloorActivity;
 import com.example.chansiqing.databindingstudy.activity.MixListActivity;
+import com.example.chansiqing.databindingstudy.activity.MixListNewActivity;
 import com.example.chansiqing.databindingstudy.data.MainFrameData;
 
 /**
- * TODO:功能说明
+ * 菜单页presenter
  *
  * @author: chansiqing
  * @date: 2018-09-30 19:15
@@ -44,6 +45,8 @@ public class MainFramePresenter {
                 break;
             case R.id.btn3:
                 Toast.makeText(view.getContext(), "btn3 fuck click", Toast.LENGTH_SHORT).show();
+                Intent intent3 = new Intent(view.getContext(), MixListNewActivity.class);
+                view.getContext().startActivity(intent3);
                 break;
             case R.id.btn4:
                 Toast.makeText(view.getContext(), "btn4 fuck click", Toast.LENGTH_SHORT).show();

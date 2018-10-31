@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".activity.ComplexFloorActivity"/>
         <activity android:name=".activity.MixListActivity"/>
+        <activity android:name=".activity.MixListNewActivity"/>
     </application>
 
 </manifest>

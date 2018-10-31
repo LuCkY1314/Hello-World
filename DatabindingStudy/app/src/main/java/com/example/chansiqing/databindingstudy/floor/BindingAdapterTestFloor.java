@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.FloorBindingAdapterTestBinding;
+import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 
 /**
  * TODO:功能说明
@@ -15,7 +16,7 @@ import com.example.chansiqing.databindingstudy.databinding.FloorBindingAdapterTe
  * @author: chansiqing
  * @date: 2018-10-12 14:51
  */
-public class BindingAdapterTestFloor extends LinearLayout {
+public class BindingAdapterTestFloor extends LinearLayout implements FloorMatchDataInterface {
     private FloorBindingAdapterTestBinding binding;
 
     public BindingAdapterTestFloor(Context context) {
@@ -27,7 +28,13 @@ public class BindingAdapterTestFloor extends LinearLayout {
         binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.floor_binding_adapter_test, this, true);
     }
 
-    public void setData(BindingAdapterTestFloorData data) {
+    public void setModel(BindingAdapterTestFloorData data) {
         binding.setItem(data);
+    }
+
+    @Override
+    public void adapterData(Object data) {
+        if (data instanceof BindingAdapterTestFloorData)
+            setModel((BindingAdapterTestFloorData) data);
     }
 }

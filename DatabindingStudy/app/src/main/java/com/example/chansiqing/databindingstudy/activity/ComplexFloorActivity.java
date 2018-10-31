@@ -63,6 +63,7 @@ public class ComplexFloorActivity extends AppCompatActivity {
      * @param binding
      */
     private void initMockData(ActivityComplexFloorBinding binding) {
+        //flipperView
         for (int i = 0; i < 4; i++) {
             FlipperData data = new FlipperData();
             data.setText("这是一条资讯 " + i);
@@ -73,6 +74,7 @@ public class ComplexFloorActivity extends AppCompatActivity {
             }
         }
 
+        //双向绑定范例楼层
         AutoAdapterFloorData data = new AutoAdapterFloorData();
         data.setText("开始测试");
         data.setNeedColor(true);
@@ -80,14 +82,18 @@ public class ComplexFloorActivity extends AppCompatActivity {
         binding.content.addView(autoAdapterFloor, linearLayoutParam);
         autoAdapterFloor.setData(data);
 
+        //自定义注解使用范例楼层
         BindingAdapterTestFloorData data1 = new BindingAdapterTestFloorData();
         data1.setShowDefault(true);
         data1.setUrl(url);
         data1.setUrl2(url2);
         BindingAdapterTestFloor bindingAdapterTestFloor = new BindingAdapterTestFloor(this);
         binding.content.addView(bindingAdapterTestFloor, linearLayoutParam);
-        bindingAdapterTestFloor.setData(data1);
-        //autoAdapterFloor.setModel(data1);
+        bindingAdapterTestFloor.setModel(data1);
+        //一个xml可以对应多个数据源的范例
+        autoAdapterFloor.setModel(data1);
+
+        //列表范例楼层
         ArrayList<ListTestFloorData> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             ListTestFloorData data2 = new ListTestFloorData();
@@ -100,7 +106,7 @@ public class ComplexFloorActivity extends AppCompatActivity {
         }
         ListTestFloor listTestFloor = new ListTestFloor(this);
         binding.content.addView(listTestFloor, linearLayoutParam);
-        listTestFloor.setData(list);
+        listTestFloor.setModel(list);
     }
 
     /**

@@ -33,12 +33,19 @@ import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_LIST_TEST;
 
 /**
- * TODO:功能说明
+ * dataBindingHolder生成器
  *
  * @author: chansiqing
  * @date: 2018-10-26 14:50
  */
 public class MixFloorListHolderGenerator {
+    /**
+     * 生成对应楼层的dataBinding
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     public static BaseBindingHolder generateView(ViewGroup parent, int viewType) {
         switch (viewType) {
             case FLOOR_AUTO_ADAPTER:
@@ -85,6 +92,13 @@ public class MixFloorListHolderGenerator {
         }
     }
 
+    /**
+     * 给dataBindingHolder绑定数据
+     *
+     * @param item
+     * @param position
+     * @param holder
+     */
     public static void bindView(final FloorData item, final int position, final BaseBindingHolder holder) {
         String type = item.getType();
         int floorType;

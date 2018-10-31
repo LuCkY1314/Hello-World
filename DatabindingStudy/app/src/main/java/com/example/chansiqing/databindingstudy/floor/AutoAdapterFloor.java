@@ -7,12 +7,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.FloorAutoAdapterBinding;
+import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 import com.example.chansiqing.databindingstudy.viewModel.AutoAdapterFloorPresenter;
 
 /**
@@ -21,7 +23,7 @@ import com.example.chansiqing.databindingstudy.viewModel.AutoAdapterFloorPresent
  * @author: chansiqing
  * @date: 2018-10-11 14:13
  */
-public class AutoAdapterFloor extends LinearLayout {
+public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInterface {
     private FloorAutoAdapterBinding binding;
 
     public AutoAdapterFloor(Context context) {
@@ -84,5 +86,11 @@ public class AutoAdapterFloor extends LinearLayout {
     public void setModel(BindingAdapterTestFloorData data) {
         if (data == null) return;
         binding.setModel(data);
+    }
+
+    @Override
+    public void adapterData(Object data) {
+        if (data instanceof AutoAdapterFloorData)
+            setData((AutoAdapterFloorData) data);
     }
 }

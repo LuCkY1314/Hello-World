@@ -6,15 +6,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
+import com.example.chansiqing.databindingstudy.BR;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.FloorListTestFloorBinding;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple;
-import com.example.chansiqing.databindingstudy.BR;
+import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 列表楼层
@@ -22,7 +22,7 @@ import java.util.List;
  * @author: chansiqing
  * @date: 2018-10-24 16:01
  */
-public class ListTestFloor extends LinearLayout {
+public class ListTestFloor extends LinearLayout implements FloorMatchDataInterface {
     private FloorListTestFloorBinding binding;
 
     public ListTestFloor(Context context) {
@@ -41,10 +41,17 @@ public class ListTestFloor extends LinearLayout {
      *
      * @param data
      */
-    public void setData(ArrayList<ListTestFloorData> data) {
+    public void setModel(ArrayList<ListTestFloorData> data) {
 //        ListTestFloorListAdapterSimple adapter = new ListTestFloorListAdapterSimple();
-//        adapter.setData(data);
+//        adapter.adapterData(data);
 //        binding.recycle.setAdapter(adapter);
-        binding.setItem(data);
+        binding.setVariable(BR.item, data);
+    }
+
+    @Override
+    public void adapterData(Object data) {
+        if (data instanceof ArrayList) {
+            setModel((ArrayList<ListTestFloorData>) data);
+        }
     }
 }
