@@ -37,17 +37,18 @@ public class MainFrameActivity extends AppCompatActivity {
     private MainFrameData initMockData() {
         MainFrameData data = new MainFrameData();
         MainFrameData.ItemBtnData btnData1 = new MainFrameData.ItemBtnData();
-        btnData1.setSimpleBtnName("测试按钮1");
+        btnData1.setSimpleBtnName("普通addView楼层");
         btnData1.setSimpleBtnVisible(true);
         btnData1.setMarginHorizon(UIUtil.dp2px(20));
         btnData1.setSimpleBtnDrawableUrl("http://m.360buyimg.com/mobilecms/jfs/t27775/135/517402683/124382/348be7c3/5bb06cc6N0a8b634a.jpeg!q70.jpg.webp");
         MainFrameData.ItemBtnData btnData2 = new MainFrameData.ItemBtnData();
-        btnData2.setSimpleBtnName("测试按钮2");
+        btnData2.setSimpleBtnName("bindingHolder混合楼层");
         btnData2.setSimpleBtnVisible(true);
+        btnData2.setMarginVertical(UIUtil.dp2px(20));
         btnData2.setMarginHorizon(UIUtil.dp2px(20));
         btnData2.setSimpleBtnDrawableUrl("http://m.360buyimg.com/mobilecms/jfs/t27775/135/517402683/124382/348be7c3/5bb06cc6N0a8b634a.jpeg!q70.jpg.webp");
         MainFrameData.ItemBtnData btnData3 = new MainFrameData.ItemBtnData();
-        btnData3.setSimpleBtnName("测试按钮3");
+        btnData3.setSimpleBtnName("复用view的混合楼层");
         btnData3.setSimpleBtnVisible(true);
         btnData3.setMarginHorizon(UIUtil.dp2px(20));
         btnData3.setMarginVertical(UIUtil.dp2px(20));

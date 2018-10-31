@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
+import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.databinding.ListItemListFloorBinding;
 import com.example.chansiqing.databindingstudy.floor.listHolder.BaseBindingHolder;
 import com.example.chansiqing.databindingstudy.viewModel.BasePresenter;
@@ -21,11 +22,11 @@ import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorItemPresen
  * @author: chansiqing
  * @date: 2018-10-24 17:10
  */
-public class ListTestFloorListAdapterSimple extends BaseBindingListAdapter<ListTestFloorData, ListItemListFloorBinding> {
+public class ListTestFloorListAdapterSimple extends BaseBindingListAdapter<ListTestFloorItemData, ListItemListFloorBinding> {
 
     @Override
-    public BaseBindingHolder<ListTestFloorData, ListItemListFloorBinding> createMyViewHolder(ViewGroup parent, int viewType) {
-        return new BaseBindingHolder<ListTestFloorData, ListItemListFloorBinding>((ListItemListFloorBinding) DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.list_item_list_floor, parent, false)) {
+    public BaseBindingHolder<ListTestFloorItemData, ListItemListFloorBinding> createMyViewHolder(ViewGroup parent, int viewType) {
+        return new BaseBindingHolder<ListTestFloorItemData, ListItemListFloorBinding>((ListItemListFloorBinding) DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.list_item_list_floor, parent, false)) {
             @Override
             public BasePresenter getPresenter() {
                 return new ListTestFloorItemPresenter();

@@ -11,7 +11,7 @@
 
         <variable
             name="item"
-            type="com.example.chansiqing.databindingstudy.data.ListTestFloorData"/>
+            type="com.example.chansiqing.databindingstudy.data.ListTestFloorItemData"/>
     </data>
 
     <RelativeLayout

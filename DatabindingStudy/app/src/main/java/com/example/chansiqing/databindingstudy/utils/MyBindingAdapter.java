@@ -30,7 +30,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * TODO:功能说明
+ * 自定义全局DataBindingAdapter
  *
  * @author: chansiqing
  * @date: 2018-10-09 15:36
@@ -76,7 +76,7 @@ public class MyBindingAdapter {
         view.setImageURI(url);
     }
 
-    @BindingAdapter("data")
+    @BindingAdapter("myRecycleViewOnly:data")
     public static void setData(MyRecycleView view, List<? extends BaseData> list) {
         if (list == null || list.size() == 0) return;
         view.setData(list);

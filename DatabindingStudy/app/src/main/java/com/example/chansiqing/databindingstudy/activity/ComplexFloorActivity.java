@@ -21,6 +21,7 @@ import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FlipperData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
+import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityComplexFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ViewFlipperChildBinding;
 import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
@@ -94,9 +95,9 @@ public class ComplexFloorActivity extends AppCompatActivity {
         autoAdapterFloor.setModel(data1);
 
         //列表范例楼层
-        ArrayList<ListTestFloorData> list = new ArrayList<>();
+        ArrayList<ListTestFloorItemData> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            ListTestFloorData data2 = new ListTestFloorData();
+            ListTestFloorItemData data2 = new ListTestFloorItemData();
             data2.setImgUrl(url);
             data2.setName("京东好货嚯嚯嚯");
             data2.setPrice("1024");

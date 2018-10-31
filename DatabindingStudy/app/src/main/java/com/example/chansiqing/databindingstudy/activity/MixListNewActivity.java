@@ -41,7 +41,7 @@ public class MixListNewActivity extends AppCompatActivity {
         List<FloorData> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             FloorData data = new FloorData();
-            data.setFloorJson(JsonResource.list[i % 3]);
+            data.setFloorJson(JsonResource.listNew[i % 3]);
             data.setType((10001 + i % 3) + "");
             list.add(data);
         }

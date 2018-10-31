@@ -86,6 +86,8 @@ public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInte
     public void setModel(BindingAdapterTestFloorData data) {
         if (data == null) return;
         binding.setModel(data);
+        //如果不使用dataBinding，这里也能实现view和data的绑定，逻辑写在此处
+        //比如每个textView的展示文案赋值，simpleDrawee图片展示赋值，EditText文案赋值
     }
 
     @Override

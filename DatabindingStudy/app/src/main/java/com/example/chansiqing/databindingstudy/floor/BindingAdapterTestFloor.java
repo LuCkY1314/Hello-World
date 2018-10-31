@@ -11,7 +11,7 @@ import com.example.chansiqing.databindingstudy.databinding.FloorBindingAdapterTe
 import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 
 /**
- * TODO:功能说明
+ * 自定义xml属性适配实验楼层
  *
  * @author: chansiqing
  * @date: 2018-10-12 14:51
@@ -30,6 +30,7 @@ public class BindingAdapterTestFloor extends LinearLayout implements FloorMatchD
 
     public void setModel(BindingAdapterTestFloorData data) {
         binding.setItem(data);
+        //如果不用dataBinding，此处要给相应控件赋值
     }
 
     @Override

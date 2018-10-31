@@ -19,29 +19,30 @@
 
         <Button
             android:id="@+id/btn1"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="@{item.btn1.marginHorizon}"
+            android:layout_centerHorizontal="true"
             android:onClick="@{presenter::onClick}"
             android:text="@{item.btn1.getSimpleBtnName}"
             android:visibility="@{presenter.isVisible(item.btn1.isSimpleBtnVisible)}"/>
 
         <Button
             android:id="@+id/btn2"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@{item.btn2.marginHorizon}"
+            android:layout_below="@+id/btn1"
+            android:layout_centerHorizontal="true"
             android:onClick="@{()->presenter.onClick(btn2,item.btn2)}"
             android:text="@{item.btn2.getSimpleBtnName}"
+            android:layout_marginTop="@{item.btn2.marginVertical}"
             android:visibility="@{presenter.isVisible(item.btn2.isSimpleBtnVisible)}"/>
 
         <Button
             android:id="@+id/btn3"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_below="@+id/btn2"
-            android:layout_marginLeft="@{item.btn3.marginHorizon}"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@{item.btn3.marginVertical}"
             android:onClick="@{presenter.onClick}"
             android:text="@{item.btn3.getSimpleBtnName}"
@@ -49,11 +50,11 @@
 
         <Button
             android:id="@+id/btn4"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_alignBottom="@+id/btn3"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@{item.btn4.marginHorizon}"
+            android:layout_below="@+id/btn3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@{item.btn4.marginVertical}"
             android:onClick="@{(view)->presenter.onClick(view)}"
             android:text="@{item.btn4.getSimpleBtnName}"
             android:visibility="@{presenter.isVisible(item.btn4.isSimpleBtnVisible)}"/>

@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.data.BaseData;
 import com.example.chansiqing.databindingstudy.floor.listAdapter.BaseBindingListAdapter;
@@ -37,6 +38,11 @@ public class MyRecycleView extends RecyclerView {
         super(context, attrs, defStyle);
         initTouchIntercept();
 
+    }
+
+    @Override
+    public void setLayoutParams(ViewGroup.LayoutParams params) {
+        super.setLayoutParams(params);
     }
 
     public void setData(List<? extends BaseData> data) {

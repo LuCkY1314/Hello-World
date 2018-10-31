@@ -9,7 +9,9 @@ import android.widget.LinearLayout;
 import com.example.chansiqing.databindingstudy.BR;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
+import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.databinding.FloorListTestFloorBinding;
+import com.example.chansiqing.databindingstudy.databinding.FloorListTestNewBinding;
 import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 import com.example.chansiqing.databindingstudy.viewModel.ListTestFloorPresenter;
 
@@ -23,7 +25,7 @@ import java.util.ArrayList;
  * @date: 2018-10-24 16:01
  */
 public class ListTestFloor extends LinearLayout implements FloorMatchDataInterface {
-    private FloorListTestFloorBinding binding;
+    private FloorListTestNewBinding binding;
 
     public ListTestFloor(Context context) {
         super(context);
@@ -31,7 +33,7 @@ public class ListTestFloor extends LinearLayout implements FloorMatchDataInterfa
     }
 
     private void init(Context context) {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.floor_list_test_floor, this, true);
+        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.floor_list_test_new, this, true);
         binding.recycle.setLayoutManager(new LinearLayoutManager(context));
         binding.setPresenter(new ListTestFloorPresenter());
     }
@@ -41,17 +43,18 @@ public class ListTestFloor extends LinearLayout implements FloorMatchDataInterfa
      *
      * @param data
      */
-    public void setModel(ArrayList<ListTestFloorData> data) {
+    public void setModel(ArrayList<ListTestFloorItemData> data) {
+        binding.setVariable(BR.item, data);
+//        如果不使用dataBinding，需要在此处创建list的adapter，并将数据绑定
 //        ListTestFloorListAdapterSimple adapter = new ListTestFloorListAdapterSimple();
 //        adapter.adapterData(data);
 //        binding.recycle.setAdapter(adapter);
-        binding.setVariable(BR.item, data);
     }
 
     @Override
     public void adapterData(Object data) {
         if (data instanceof ArrayList) {
-            setModel((ArrayList<ListTestFloorData>) data);
+            setModel((ArrayList<ListTestFloorItemData>) data);
         }
     }
 }
