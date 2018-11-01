@@ -14,7 +14,7 @@ import com.example.chansiqing.databindingstudy.floor.listAdapter.BaseBindingList
 import java.util.List;
 
 /**
- * TODO:功能说明
+ * 支持xml设置数据源的recycleView
  *
  * @author: chansiqing
  * @date: 2018-10-26 18:08

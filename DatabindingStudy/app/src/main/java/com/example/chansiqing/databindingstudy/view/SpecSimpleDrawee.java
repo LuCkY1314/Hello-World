@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
- * TODO:功能说明
+ * 防止太快回收图片的SimpleDraweeView控件
  *
  * @author: chansiqing
  * @date: 2018-10-10 17:17

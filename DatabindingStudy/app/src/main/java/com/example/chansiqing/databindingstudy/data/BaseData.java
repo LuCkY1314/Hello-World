@@ -3,10 +3,6 @@ package com.example.chansiqing.databindingstudy.data;
 import android.databinding.BaseObservable;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 /**
  * 基本数据类型
  *

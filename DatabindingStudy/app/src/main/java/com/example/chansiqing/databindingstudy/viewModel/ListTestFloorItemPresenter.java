@@ -1,16 +1,9 @@
 package com.example.chansiqing.databindingstudy.viewModel;
 
-import android.support.v7.widget.LinearLayoutManager;
-
-import com.example.chansiqing.databindingstudy.data.BaseData;
-import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
-import com.example.chansiqing.databindingstudy.view.MyRecycleView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 列表楼层viewModel

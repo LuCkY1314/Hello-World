@@ -2,14 +2,9 @@ package com.example.chansiqing.databindingstudy.floor.listAdapter;
 
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.chansiqing.databindingstudy.BR;
 import com.example.chansiqing.databindingstudy.data.BaseData;
 import com.example.chansiqing.databindingstudy.floor.listHolder.BaseBindingHolder;
-import com.example.chansiqing.databindingstudy.viewModel.BasePresenter;
 
 import java.util.List;
 

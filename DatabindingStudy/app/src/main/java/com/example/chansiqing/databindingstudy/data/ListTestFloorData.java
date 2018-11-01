@@ -4,7 +4,6 @@ package com.example.chansiqing.databindingstudy.data;
 import android.databinding.Observable;
 import android.os.Parcel;
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**

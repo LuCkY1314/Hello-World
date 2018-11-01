@@ -14,7 +14,7 @@ import android.content.Context;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
- * TODO:功能说明
+ * application
  *
  * @author: chansiqing
  * @date: 2018-10-09 15:21

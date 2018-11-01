@@ -20,7 +20,6 @@ import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FlipperData;
-import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityComplexFloorBinding;
 import com.example.chansiqing.databindingstudy.databinding.ViewFlipperChildBinding;
@@ -34,7 +33,6 @@ import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 多楼层实验基地

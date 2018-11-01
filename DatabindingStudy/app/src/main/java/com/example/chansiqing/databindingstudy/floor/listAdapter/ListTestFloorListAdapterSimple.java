@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.R;
-import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.databinding.ListItemListFloorBinding;
 import com.example.chansiqing.databindingstudy.floor.listHolder.BaseBindingHolder;

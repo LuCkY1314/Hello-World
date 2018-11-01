@@ -17,7 +17,6 @@ import android.os.Parcel;
 import com.example.chansiqing.databindingstudy.BR;
 
 /**
- * TODO:功能说明
  *
  * @author: chansiqing
  * @date: 2018-10-10 10:40

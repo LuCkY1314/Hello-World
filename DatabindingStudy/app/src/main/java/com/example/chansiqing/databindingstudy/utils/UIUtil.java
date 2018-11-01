@@ -8,12 +8,10 @@
 
 package com.example.chansiqing.databindingstudy.utils;
 
-import android.view.WindowManager;
-
 import com.example.chansiqing.databindingstudy.activity.MyApp;
 
 /**
- * TODO:功能说明
+ * ui工具
  *
  * @author: chansiqing
  * @date: 2018-10-09 15:18
