@@ -33,7 +33,4 @@ public class ListTestFloorListAdapterSimple extends BaseBindingListAdapter<ListT
         };
     }
 
-    public static ListTestFloorListAdapterSimple getInstance() {
-        return new ListTestFloorListAdapterSimple();
-    }
 }

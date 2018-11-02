@@ -34,22 +34,22 @@ public class MainFramePresenter {
         int id = view.getId();
         switch (id) {
             case R.id.btn1:
-                Toast.makeText(view.getContext(), "btn1 fuck click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "btn1 luckly clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(view.getContext(), ComplexFloorActivity.class);
                 view.getContext().startActivity(intent);
                 break;
             case R.id.btn2:
-                Toast.makeText(view.getContext(), "btn2 fuck click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "btn2 luckly clicked", Toast.LENGTH_SHORT).show();
                 Intent intent2 = new Intent(view.getContext(), MixListActivity.class);
                 view.getContext().startActivity(intent2);
                 break;
             case R.id.btn3:
-                Toast.makeText(view.getContext(), "btn3 fuck click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "btn3 luckly clicked", Toast.LENGTH_SHORT).show();
                 Intent intent3 = new Intent(view.getContext(), MixListNewActivity.class);
                 view.getContext().startActivity(intent3);
                 break;
             case R.id.btn4:
-                Toast.makeText(view.getContext(), "btn4 fuck click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "你谁呀，点爷作甚", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

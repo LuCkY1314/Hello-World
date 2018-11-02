@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 列表楼层viewModel
+ * 列表楼层item的viewModel
  *
  * @author: chansiqing
  * @date: 2018-10-24 18:52

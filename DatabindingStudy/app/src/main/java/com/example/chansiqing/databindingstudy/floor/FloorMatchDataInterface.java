@@ -9,8 +9,18 @@ import android.view.View;
  * @date: 2018-10-30 18:58
  */
 public interface FloorMatchDataInterface {
+    /**
+     * 适配数据
+     *
+     * @param data
+     */
     void adapterData(Object data);
 
+    /**
+     * 拿到根布局（view已经实现了，所以实现该接口的自定义view不用实现该方法）
+     *
+     * @return
+     */
     View getRootView();
 
 }

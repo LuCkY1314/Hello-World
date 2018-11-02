@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -24,6 +25,7 @@
             android:layout_centerHorizontal="true"
             android:onClick="@{presenter::onClick}"
             android:text="@{item.btn1.getSimpleBtnName}"
+            tools:text="普通楼层"
             android:visibility="@{presenter.isVisible(item.btn1.isSimpleBtnVisible)}"/>
 
         <Button
@@ -31,6 +33,7 @@
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_below="@+id/btn1"
+            tools:text="bindingHolder混合楼层"
             android:layout_centerHorizontal="true"
             android:onClick="@{()->presenter.onClick(btn2,item.btn2)}"
             android:text="@{item.btn2.getSimpleBtnName}"
@@ -41,6 +44,7 @@
             android:id="@+id/btn3"
             android:layout_width="200dp"
             android:layout_height="40dp"
+            tools:text="复用view的混合楼层"
             android:layout_below="@+id/btn2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@{item.btn3.marginVertical}"
@@ -53,6 +57,7 @@
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_below="@+id/btn3"
+            tools:text="仅为好看凑数的按钮"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@{item.btn4.marginVertical}"
             android:onClick="@{(view)->presenter.onClick(view)}"

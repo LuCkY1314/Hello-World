@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
@@ -25,6 +26,7 @@ import com.example.chansiqing.databindingstudy.viewModel.AutoAdapterFloorPresent
  */
 public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInterface {
     private FloorAutoAdapterBinding binding;
+    private AutoAdapterFloorData data;
 
     public AutoAdapterFloor(Context context) {
         super(context);
@@ -57,15 +59,35 @@ public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInte
             @Override
             public void afterTextChanged(Editable s) {
                 binding.edit.setSelection(s.length());
-                //因为双向绑定中，当输入为空的时候，会在设置回数据model的时候发生强转错误，导致仍返回更改前的数据，
-                //具体逻辑见dataBinding自动生成的类FloorAutoAdapterBinding的64行
-                //所以提前判断这种情况，将其直接设为默认值0，以避免出现显示不符预期的问题
-//                if (TextUtils.isEmpty(s)) {
-//                    data.setCount(0);
+                //如果不使用双向绑定，则设置数据和数据改变通知view都不会自动发生，需要手动设置如下：
+//                int progress = 0;
+//                try {
+//                    progress = Integer.parseInt(s.toString().trim());
+//                } catch (Exception e) {
 //                }
-                //或者解法2：将count设为String类型避免强转问题，即是现在的做法
+//                binding.seekBar.setProgress(progress);
+//                data.setCount(s.toString());
             }
         });
+
+        //如果不使用双向绑定，数据改变通知view不会自动发生，需要手动设置如下：
+        /*binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                binding.edit.setText(progress + "");
+                //binding.text.setText(progress + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });*/
     }
 
     /**
@@ -75,6 +97,7 @@ public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInte
      */
     public void setData(final AutoAdapterFloorData data) {
         if (data == null) return;
+        this.data = data;
         binding.setItem(data);
     }
 
@@ -95,4 +118,13 @@ public class AutoAdapterFloor extends LinearLayout implements FloorMatchDataInte
         if (data instanceof AutoAdapterFloorData)
             setData((AutoAdapterFloorData) data);
     }
+
+
+    //因为双向绑定中，当输入为空的时候，会在设置回数据model的时候发生强转错误，导致仍返回更改前的数据，
+    //具体逻辑见dataBinding自动生成的类FloorAutoAdapterBinding的64行
+    //所以提前判断这种情况，将其直接设为默认值0，以避免出现显示不符预期的问题
+//                if (TextUtils.isEmpty(s)) {
+//                    data.setCount(0);
+//                }
+    //或者解法2：将count设为String类型避免强转问题，即是现在的做法
 }

@@ -54,7 +54,7 @@ public class MainFrameActivity extends AppCompatActivity {
         btnData3.setMarginVertical(UIUtil.dp2px(20));
         btnData3.setSimpleBtnDrawableUrl("http://m.360buyimg.com/mobilecms/jfs/t27775/135/517402683/124382/348be7c3/5bb06cc6N0a8b634a.jpeg!q70.jpg.webp");
         MainFrameData.ItemBtnData btnData4 = new MainFrameData.ItemBtnData();
-        btnData4.setSimpleBtnName("测试按钮4");
+        btnData4.setSimpleBtnName("仅为好看凑数的按钮");
         btnData4.setSimpleBtnVisible(true);
         btnData4.setMarginHorizon(UIUtil.dp2px(20));
         btnData4.setMarginVertical(UIUtil.dp2px(20));
