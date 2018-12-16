@@ -16,6 +16,7 @@ import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.activity.ComplexFloorActivity;
 import com.example.chansiqing.databindingstudy.activity.MixListActivity;
 import com.example.chansiqing.databindingstudy.activity.MixListNewActivity;
+import com.example.chansiqing.databindingstudy.activity.MyPageViewActivity;
 import com.example.chansiqing.databindingstudy.data.MainFrameData;
 
 /**
@@ -50,6 +51,8 @@ public class MainFramePresenter {
                 break;
             case R.id.btn4:
                 Toast.makeText(view.getContext(), "你谁呀，点爷作甚", Toast.LENGTH_SHORT).show();
+                Intent intent4 = new Intent(view.getContext(), MyPageViewActivity.class);
+                view.getContext().startActivity(intent4);
                 break;
         }
     }

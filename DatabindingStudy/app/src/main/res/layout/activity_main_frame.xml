@@ -36,7 +36,7 @@
             tools:text="bindingHolder混合楼层"
             android:layout_centerHorizontal="true"
             android:onClick="@{()->presenter.onClick(btn2,item.btn2)}"
-            android:text="@{item.btn2.getSimpleBtnName}"
+            android:text="@{item.btn2.simpleBtnName}"
             android:layout_marginTop="@{item.btn2.marginVertical}"
             android:visibility="@{presenter.isVisible(item.btn2.isSimpleBtnVisible)}"/>
 

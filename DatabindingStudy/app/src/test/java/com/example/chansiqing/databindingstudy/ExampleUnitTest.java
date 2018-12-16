@@ -1,6 +1,8 @@
 package com.example.chansiqing.databindingstudy;
 
 
+import com.example.chansiqing.databindingstudy.utils.JDHomeNoUIThreadPool;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -23,5 +25,17 @@ public class ExampleUnitTest {
             System.out.println("正确，i = " + i);
         else
             System.out.println("错误，i = " + i);
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("currentRunThreadNum " + JDHomeNoUIThreadPool.getCurrentRunThreadNum());
+            }
+        };
+        for (int j = 0; j < 100; j++) {
+            JDHomeNoUIThreadPool.addTask(runnable);
+        }
+        JDHomeNoUIThreadPool.addTask(runnable);
+        JDHomeNoUIThreadPool.addTask(runnable);
+        JDHomeNoUIThreadPool.destroy();
     }
 }
