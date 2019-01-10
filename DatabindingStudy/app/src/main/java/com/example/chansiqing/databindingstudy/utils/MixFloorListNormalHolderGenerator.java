@@ -8,10 +8,14 @@ import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
+import com.example.chansiqing.databindingstudy.data.RotateFloorData;
+import com.example.chansiqing.databindingstudy.data.ScrollData;
 import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
 import com.example.chansiqing.databindingstudy.floor.BindingAdapterTestFloor;
 import com.example.chansiqing.databindingstudy.floor.FloorMatchDataInterface;
 import com.example.chansiqing.databindingstudy.floor.ListTestFloor;
+import com.example.chansiqing.databindingstudy.floor.RotateAnimFloor;
+import com.example.chansiqing.databindingstudy.floor.ScrollFloor;
 import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
 import com.google.gson.Gson;
 
@@ -21,6 +25,8 @@ import java.util.Arrays;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_AUTO_ADAPTER;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_BINDING_TEST;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_LIST_TEST;
+import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_ROTATE_ANIM;
+import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_SCROLL;
 
 /**
  * 混合楼层中每个楼层生成器
@@ -85,6 +91,12 @@ public class MixFloorListNormalHolderGenerator {
             case FLOOR_BINDING_TEST:
                 data = new Gson().fromJson(item.getFloorJson(), BindingAdapterTestFloorData.class);
                 break;
+            case FLOOR_SCROLL:
+                data = new Gson().fromJson(item.getFloorJson(), ScrollData.class);
+                break;
+            case FLOOR_ROTATE_ANIM:
+                data = new Gson().fromJson(item.getFloorJson(), RotateFloorData.class);
+                break;
         }
         return data;
     }
@@ -108,6 +120,12 @@ public class MixFloorListNormalHolderGenerator {
                 break;
             case FLOOR_BINDING_TEST:
                 view = new BindingAdapterTestFloor(context);
+                break;
+            case FLOOR_SCROLL:
+                view = new ScrollFloor(context);
+                break;
+            case FLOOR_ROTATE_ANIM:
+                view = new RotateAnimFloor(context);
                 break;
         }
         return view;

@@ -12,6 +12,9 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.MainFrameData;
@@ -32,6 +35,9 @@ public class MainFrameActivity extends AppCompatActivity {
         ActivityMainFrameBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main_frame);
         binding.setItem(initMockData());
         binding.setPresenter(new MainFramePresenter());
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_in_cover);
+        animation.setInterpolator(new LinearInterpolator());
+        binding.rotate.startAnimation(animation);
     }
 
     private MainFrameData initMockData() {

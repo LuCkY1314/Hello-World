@@ -25,44 +25,52 @@
             android:layout_centerHorizontal="true"
             android:onClick="@{presenter::onClick}"
             android:text="@{item.btn1.getSimpleBtnName}"
-            tools:text="普通楼层"
-            android:visibility="@{presenter.isVisible(item.btn1.isSimpleBtnVisible)}"/>
+            android:visibility="@{presenter.isVisible(item.btn1.isSimpleBtnVisible)}"
+            tools:text="普通楼层"/>
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_below="@+id/btn1"
-            tools:text="bindingHolder混合楼层"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@{item.btn2.marginVertical}"
             android:onClick="@{()->presenter.onClick(btn2,item.btn2)}"
             android:text="@{item.btn2.simpleBtnName}"
-            android:layout_marginTop="@{item.btn2.marginVertical}"
-            android:visibility="@{presenter.isVisible(item.btn2.isSimpleBtnVisible)}"/>
+            android:visibility="@{presenter.isVisible(item.btn2.isSimpleBtnVisible)}"
+            tools:text="bindingHolder混合楼层"/>
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            tools:text="复用view的混合楼层"
             android:layout_below="@+id/btn2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@{item.btn3.marginVertical}"
             android:onClick="@{presenter.onClick}"
             android:text="@{item.btn3.getSimpleBtnName}"
-            android:visibility="@{presenter.isVisible(item.btn3.isSimpleBtnVisible)}"/>
+            android:visibility="@{presenter.isVisible(item.btn3.isSimpleBtnVisible)}"
+            tools:text="复用view的混合楼层"/>
 
         <Button
             android:id="@+id/btn4"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_below="@+id/btn3"
-            tools:text="仅为好看凑数的按钮"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@{item.btn4.marginVertical}"
             android:onClick="@{(view)->presenter.onClick(view)}"
             android:text="@{item.btn4.getSimpleBtnName}"
-            android:visibility="@{presenter.isVisible(item.btn4.isSimpleBtnVisible)}"/>
+            android:visibility="@{presenter.isVisible(item.btn4.isSimpleBtnVisible)}"
+            tools:text="仅为好看凑数的按钮"/>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/rotate"
+            android:layout_height="78dp"
+            android:src="@drawable/rotate_image"
+            android:layout_below="@+id/btn4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
     </RelativeLayout>
 </layout>

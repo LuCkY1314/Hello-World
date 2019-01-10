@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.FloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityMixListBinding;
 import com.example.chansiqing.databindingstudy.floor.listAdapter.MixFloorListNormalAdapter;
 import com.example.chansiqing.databindingstudy.utils.JsonResource;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +37,21 @@ public class MixListNewActivity extends AppCompatActivity {
         MixFloorListNormalAdapter adapter = new MixFloorListNormalAdapter();
         adapter.setData(initData());
         binding.recycleView.setAdapter(adapter);
+        binding.recycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+            }
+        });
     }
 
     private List<FloorData> initData() {
         List<FloorData> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             FloorData data = new FloorData();
-            data.setFloorJson(JsonResource.listNew[i % 3]);
-            data.setType((10001 + i % 3) + "");
+            data.setFloorJson(JsonResource.listNew[i % JsonResource.listNew.length]);
+            data.setType((10001 + i % JsonResource.listNew.length) + "");
             list.add(data);
         }
         return list;

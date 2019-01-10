@@ -51,6 +51,6 @@ public class MyViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getItemPosition(Object object) {
-        return super.getItemPosition(object);
+        return POSITION_NONE;
     }
 }
