@@ -8,6 +8,10 @@
 
 package com.example.chansiqing.databindingstudy.utils;
 
+import android.content.Context;
+import android.view.Display;
+import android.view.WindowManager;
+
 import com.example.chansiqing.databindingstudy.activity.MyApp;
 
 /**
@@ -48,5 +52,29 @@ public class UIUtil {
         float fontScale = MyApp.context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
+
+    /**
+     * 获取屏幕的宽度
+     *
+     * @return
+     */
+    public static int getScreenWidth() {
+        WindowManager manager = (WindowManager) MyApp.context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = manager.getDefaultDisplay();
+        return display.getWidth();
+    }
+
+    /**
+     * 获取屏幕的高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getScreenHeight(Context context) {
+        WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = manager.getDefaultDisplay();
+        return display.getHeight();
+    }
+
 
 }

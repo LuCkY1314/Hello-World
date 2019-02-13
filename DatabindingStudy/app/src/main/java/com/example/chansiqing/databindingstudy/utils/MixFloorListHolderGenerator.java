@@ -17,7 +17,7 @@ import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.databinding.FloorAutoAdapterBinding;
 import com.example.chansiqing.databindingstudy.databinding.FloorBindingAdapterTestBinding;
 import com.example.chansiqing.databindingstudy.databinding.FloorListTestFloorBinding;
-import com.example.chansiqing.databindingstudy.floor.listHolder.BaseBindingHolder;
+import com.example.chansiqing.databindingstudy.floors.listHolder.BaseBindingHolder;
 import com.example.chansiqing.databindingstudy.viewModel.AutoAdapterFloorPresenter;
 import com.example.chansiqing.databindingstudy.viewModel.BasePresenter;
 import com.example.chansiqing.databindingstudy.viewModel.BindingAdapterTestFloorPresenter;

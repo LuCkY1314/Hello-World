@@ -6,18 +6,21 @@ import android.view.ViewGroup;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FloorData;
-import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
 import com.example.chansiqing.databindingstudy.data.RotateFloorData;
 import com.example.chansiqing.databindingstudy.data.ScrollData;
-import com.example.chansiqing.databindingstudy.floor.AutoAdapterFloor;
-import com.example.chansiqing.databindingstudy.floor.BindingAdapterTestFloor;
-import com.example.chansiqing.databindingstudy.floor.FloorMatchDataInterface;
-import com.example.chansiqing.databindingstudy.floor.ListTestFloor;
-import com.example.chansiqing.databindingstudy.floor.RotateAnimFloor;
-import com.example.chansiqing.databindingstudy.floor.ScrollFloor;
-import com.example.chansiqing.databindingstudy.floor.listHolder.MixFloorBaseHolder;
+import com.example.chansiqing.databindingstudy.data.ValueAnimFloorData;
+import com.example.chansiqing.databindingstudy.floors.floor.AutoAdapterFloor;
+import com.example.chansiqing.databindingstudy.floors.floor.BindingAdapterTestFloor;
+import com.example.chansiqing.databindingstudy.floors.floor.ValueAnimFloor;
+import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.FloorMatchDataInterface;
+import com.example.chansiqing.databindingstudy.floors.floor.ListTestFloor;
+import com.example.chansiqing.databindingstudy.floors.floor.RotateAnimFloor;
+import com.example.chansiqing.databindingstudy.floors.floor.ScrollFloor;
+import com.example.chansiqing.databindingstudy.floors.listHolder.MixFloorBaseHolder;
 import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +30,7 @@ import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_LIST_TEST;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_ROTATE_ANIM;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_SCROLL;
+import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_VALUE_ANIM;
 
 /**
  * 混合楼层中每个楼层生成器
@@ -97,6 +101,9 @@ public class MixFloorListNormalHolderGenerator {
             case FLOOR_ROTATE_ANIM:
                 data = new Gson().fromJson(item.getFloorJson(), RotateFloorData.class);
                 break;
+            case FLOOR_VALUE_ANIM:
+                data = new Gson().fromJson(item.getFloorJson(), ValueAnimFloorData.class);
+                break;
         }
         return data;
     }
@@ -126,6 +133,9 @@ public class MixFloorListNormalHolderGenerator {
                 break;
             case FLOOR_ROTATE_ANIM:
                 view = new RotateAnimFloor(context);
+                break;
+            case FLOOR_VALUE_ANIM:
+                view = new ValueAnimFloor(context);
                 break;
         }
         return view;

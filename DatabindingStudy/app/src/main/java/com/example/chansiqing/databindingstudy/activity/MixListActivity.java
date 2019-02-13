@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.FloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityMixListBinding;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.MixFloorListAdapter;
+import com.example.chansiqing.databindingstudy.floors.listAdapter.MixFloorListAdapter;
 import com.example.chansiqing.databindingstudy.utils.JsonResource;
 
 import java.util.ArrayList;

@@ -4,7 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorItemData;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple;
+import com.example.chansiqing.databindingstudy.floors.listAdapter.ListTestFloorListAdapterSimple;
 import com.example.chansiqing.databindingstudy.view.MyRecycleView;
 
 import java.util.ArrayList;

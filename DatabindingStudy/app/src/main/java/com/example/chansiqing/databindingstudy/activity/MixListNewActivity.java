@@ -10,7 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.FloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityMixListBinding;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.MixFloorListNormalAdapter;
+import com.example.chansiqing.databindingstudy.floors.listAdapter.MixFloorListNormalAdapter;
+import com.example.chansiqing.databindingstudy.utils.BaseEvent;
 import com.example.chansiqing.databindingstudy.utils.JsonResource;
 
 import org.greenrobot.eventbus.EventBus;
@@ -25,11 +26,13 @@ import java.util.List;
  * @date: 2018-10-30 17:36
  */
 public class MixListNewActivity extends AppCompatActivity {
+    private ActivityMixListBinding binding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMixListBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_mix_list);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_mix_list);
         initView(binding);
+        //EventBus.getDefault().register(this);
     }
 
     private void initView(ActivityMixListBinding binding) {
@@ -41,19 +44,41 @@ public class MixListNewActivity extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-
+                if (recyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE) {
+                    EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_SCROLL_STOP));
+                } else {
+                    EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_SCROLL));
+                }
             }
         });
     }
 
     private List<FloorData> initData() {
         List<FloorData> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             FloorData data = new FloorData();
             data.setFloorJson(JsonResource.listNew[i % JsonResource.listNew.length]);
             data.setType((10001 + i % JsonResource.listNew.length) + "");
             list.add(data);
         }
         return list;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_RESUME));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_PAUSE));
+    }
+
+    @Override
+
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

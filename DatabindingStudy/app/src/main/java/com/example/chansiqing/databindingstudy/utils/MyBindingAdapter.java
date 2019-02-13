@@ -9,24 +9,15 @@
 package com.example.chansiqing.databindingstudy.utils;
 
 import android.databinding.BindingAdapter;
-import android.databinding.BindingConversion;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.chansiqing.databindingstudy.data.BaseData;
-import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.BaseBindingListAdapter;
 import com.example.chansiqing.databindingstudy.view.MyRecycleView;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import org.w3c.dom.Text;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**

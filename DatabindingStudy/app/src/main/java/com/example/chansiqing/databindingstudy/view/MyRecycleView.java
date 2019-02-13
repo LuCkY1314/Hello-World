@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.data.BaseData;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.BaseBindingListAdapter;
+import com.example.chansiqing.databindingstudy.floors.listAdapter.BaseBindingListAdapter;
 
 import java.util.List;
 

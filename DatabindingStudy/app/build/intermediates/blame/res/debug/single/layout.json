@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/floor_list_test_floor.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/floor_list_test_floor.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/floor_list_test_new.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/floor_list_test_new.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/view_flipper_child.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/view_flipper_child.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_mix_list.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/activity_mix_list.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/floor_binding_adapter_test.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/floor_binding_adapter_test.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main_frame.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/activity_main_frame.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_complex_floor.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/activity_complex_floor.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/floor_auto_adapter.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/floor_auto_adapter.xml"
+    },
+    {
+        "merged": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item_list_floor.xml",
+        "source": "/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/res/layout/list_item_list_floor.xml"
+    }
+]

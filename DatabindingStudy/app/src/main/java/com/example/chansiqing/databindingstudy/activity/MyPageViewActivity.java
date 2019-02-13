@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.chansiqing.databindingstudy.R;
-import com.example.chansiqing.databindingstudy.floor.listAdapter.MyViewPagerAdapter;
+import com.example.chansiqing.databindingstudy.floors.listAdapter.MyViewPagerAdapter;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.example.chansiqing.databindingstudy.view.AutoWrapContentHeightViewPager;
 import com.example.chansiqing.databindingstudy.view.GridEachView;

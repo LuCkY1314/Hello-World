@@ -4,7 +4,7 @@
 
     <data>
         <import type="java.util.ArrayList"/>
-        <import type="com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple"/>
+        <import type="com.example.chansiqing.databindingstudy.floors.listAdapter.ListTestFloorListAdapterSimple"/>
 
         <variable
             name="presenter"

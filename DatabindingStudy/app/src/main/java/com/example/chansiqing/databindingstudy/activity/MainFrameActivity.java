@@ -8,19 +8,26 @@
 
 package com.example.chansiqing.databindingstudy.activity;
 
+import android.animation.ObjectAnimator;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.widget.RelativeLayout;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.data.MainFrameData;
+import com.example.chansiqing.databindingstudy.data.ValueAnimFloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityMainFrameBinding;
+import com.example.chansiqing.databindingstudy.floors.floor.ValueAnimFloor;
+import com.example.chansiqing.databindingstudy.utils.JsonResource;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.example.chansiqing.databindingstudy.viewModel.MainFramePresenter;
+import com.google.gson.Gson;
 
 /**
  * 启动页面
@@ -37,7 +44,18 @@ public class MainFrameActivity extends AppCompatActivity {
         binding.setPresenter(new MainFramePresenter());
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_in_cover);
         animation.setInterpolator(new LinearInterpolator());
-        binding.rotate.startAnimation(animation);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(binding.rotate, "translationY", 0.0f, 350.0f, 0f);
+        animator.setDuration(2500).start();
+        //binding.rotate.startAnimation(animation);
+        ValueAnimFloor valueAnimFloor = new ValueAnimFloor(this);
+        ValueAnimFloorData data = new Gson().fromJson(JsonResource.valueAnimFloorJson, ValueAnimFloorData.class);
+        valueAnimFloor.updateItemData(data.getItems());
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.BELOW, R.id.rotate);
+        binding.root.addView(valueAnimFloor, params);
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(valueAnimFloor, "translationY", 0, 40, 0);
+        animator1.setDuration(2000).setRepeatCount(20);
+        animator1.start();
     }
 
     private MainFrameData initMockData() {

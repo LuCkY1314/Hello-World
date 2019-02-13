@@ -3,7 +3,7 @@
         xmlns:myRecycleViewOnly="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.chansiqing.databindingstudy.floor.listAdapter.ListTestFloorListAdapterSimple"/>
+        <import type="com.example.chansiqing.databindingstudy.floors.listAdapter.ListTestFloorListAdapterSimple"/>
 
         <variable
             name="presenter"
