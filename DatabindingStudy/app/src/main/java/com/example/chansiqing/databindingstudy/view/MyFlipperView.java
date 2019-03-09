@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.example.chansiqing.databindingstudy.R;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
@@ -20,16 +19,19 @@ import com.example.chansiqing.databindingstudy.utils.UIUtil;
  * @author: chansiqing
  * @date: 2019-01-31 11:15
  */
-public class MyFlipperView extends RelativeLayout {
+public class MyFlipperView extends LinearLayout {
     private LinearLayout A_Layout, B_Layout;//两个动画替换容器
     public static final int FIRST_LAYOUT_ID = 1, SECOND_LAYOUT_ID = 2;
-    private static final int AtoB = 0, BtoA = 1;
+    private static final int AtoB = 0, BtoA = 1, END = 2;
     private static final String Y_TRANSLATE = "translationY";
     private static final String X_TRANSLATE = "translationX";
     private AnimatorSet upAnimatorSet, downAnimatorSet;//AB向上，AB向下动画组合
     private final AnimRunnable animRunnable = new AnimRunnable();//动画执行runnable，满足延迟需求，并且可以移除重复执行
     private Handler handler = new Handler(getContext().getMainLooper());
     private AnimatorSet currentAnimator;
+    private boolean isManuallyEnd;
+    private boolean hasPlayed;//是否已经被播放了
+
     //================================= 设置参数 =================================================
     private static final int EACH_LINE_DEFAULT_HEIGHT = UIUtil.dp2px(80);
     private static final int EACH_LINE_DEFAULT_WIDTH = UIUtil.getScreenWidth();
@@ -37,8 +39,27 @@ public class MyFlipperView extends RelativeLayout {
     private int eachLineWidth = EACH_LINE_DEFAULT_WIDTH;//每个容器的宽度
     public static final int VERTICAL = 0, HORIZON = 1;
     private int orientation = VERTICAL;//移动方向
-    private static final int A_SIDE = 0, B_SIDE = 1, A_SIDE_REVERT = 2;//面枚举
-    private int currentSide = A_SIDE;//当前是哪面
+    public static final int A_SIDE = 0, B_SIDE = 1, BOTH_SIDE = 2, NONE_SIDE = 3;//面枚举
+    private int currentSide = A_SIDE;//当前是哪面 用于resume的时候判断当前flipper处于什么初始状态
+    private boolean canPlay;
+    private boolean needSlowlyScroll;//开启高性能开关
+    private boolean ifHasShowA, ifHasShowB;//统计在未切换界面的时候，已经展示的面
+
+    public boolean isNeedSlowlyScroll() {
+        return needSlowlyScroll;
+    }
+
+    public void setNeedSlowlyScroll(boolean needSlowlyScroll) {
+        this.needSlowlyScroll = needSlowlyScroll;
+    }
+
+    public boolean getCanPlay() {
+        return canPlay;
+    }
+
+    public void setCanPlay(boolean canPlay) {
+        this.canPlay = canPlay;
+    }
 
     public int getEachLineHeight() {
         return eachLineHeight;
@@ -68,20 +89,23 @@ public class MyFlipperView extends RelativeLayout {
     }
 
     public interface MaidianForFlipperSKU {
-        void onA_SideShow();
 
-        void onB_sideShow();
-
-        void onBothSideShow();
+        void onBothSideShow(boolean ifHasShowA, boolean ifHasShowB);
     }
 
     public MyFlipperView(Context context, int orientation) {
         super(context);
         this.orientation = orientation;
+        if (this.orientation == VERTICAL) {
+            setOrientation(LinearLayout.VERTICAL);
+        } else {
+            setOrientation(LinearLayout.HORIZONTAL);
+        }
     }
 
     public MyFlipperView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setClipChildren(false);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.MyFlipperView, 0, 0);
         int indexCount = a.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
@@ -93,6 +117,11 @@ public class MyFlipperView extends RelativeLayout {
             }
         }
         a.recycle();
+        if (orientation == VERTICAL) {
+            setOrientation(LinearLayout.VERTICAL);
+        } else {
+            setOrientation(LinearLayout.HORIZONTAL);
+        }
     }
 
     /**
@@ -102,7 +131,7 @@ public class MyFlipperView extends RelativeLayout {
      */
     public void addA_Layout(LinearLayout a_Layout) {
         A_Layout = a_Layout;
-        RelativeLayout.LayoutParams A_Params = new RelativeLayout.LayoutParams(eachLineWidth, eachLineHeight);
+        LinearLayout.LayoutParams A_Params = new LinearLayout.LayoutParams(eachLineWidth, eachLineHeight);
         A_Layout.setId(FIRST_LAYOUT_ID);
         addView(A_Layout, A_Params);
     }
@@ -114,12 +143,7 @@ public class MyFlipperView extends RelativeLayout {
      */
     public void addB_Layout(LinearLayout b_Layout) {
         B_Layout = b_Layout;
-        RelativeLayout.LayoutParams B_Params = new RelativeLayout.LayoutParams(eachLineWidth, eachLineHeight);
-        if (orientation == VERTICAL) {
-            B_Params.addRule(BELOW, FIRST_LAYOUT_ID);
-        } else {
-            B_Params.addRule(RIGHT_OF, FIRST_LAYOUT_ID);
-        }
+        LinearLayout.LayoutParams B_Params = new LinearLayout.LayoutParams(eachLineWidth, eachLineHeight);
         B_Layout.setId(SECOND_LAYOUT_ID);
         addView(B_Layout, B_Params);
         //A，B面都添加好之后，才去初始化动画
@@ -130,6 +154,7 @@ public class MyFlipperView extends RelativeLayout {
      * 初始化两个替换容器的flipper动画
      */
     private void initAnim() {
+        //默认竖直方向的滑动
         String translateSide = Y_TRANSLATE;
         switch (orientation) {
             case VERTICAL:
@@ -144,21 +169,25 @@ public class MyFlipperView extends RelativeLayout {
         ObjectAnimator B_ToUpAnim = ObjectAnimator.ofFloat(B_Layout, translateSide, 0, -eachLineHeight);
         ObjectAnimator B_ToBottomAnim = ObjectAnimator.ofFloat(B_Layout, translateSide, -eachLineHeight, 0);
 
-        upAnimatorSet = new AnimatorSet();
+        currentAnimator = upAnimatorSet = new AnimatorSet();
         upAnimatorSet.setDuration(3000);
+        upAnimatorSet.setStartDelay(2000);
         upAnimatorSet.play(A_ToUpAnim).with(B_ToUpAnim);
         upAnimatorSet.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                if (maidianListener != null) {
-                    maidianListener.onBothSideShow();
-                }
+                currentSide = BOTH_SIDE;
+                ifHasShowA = true;
+                hasPlayed = true;
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                animRunnable.setAnimType(BtoA);
-                handler.postDelayed(animRunnable, 1500);
+                currentSide = B_SIDE;
+                if (!isManuallyEnd) {
+                    currentAnimator = downAnimatorSet;
+                    currentAnimator.start();
+                }
             }
 
             @Override
@@ -173,19 +202,19 @@ public class MyFlipperView extends RelativeLayout {
         });
         downAnimatorSet = new AnimatorSet();
         downAnimatorSet.setDuration(3000);
+        downAnimatorSet.setStartDelay(1500);
         downAnimatorSet.play(A_ToBottomAnim).with(B_ToBottomAnim);
         downAnimatorSet.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                if (maidianListener != null) {
-                    maidianListener.onBothSideShow();
-                }
+                currentSide = BOTH_SIDE;
+                ifHasShowB = true;
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
-//                animRunnable.setAnimType(AtoB);
-//                handler.postDelayed(animRunnable, 1500);
+                currentSide = A_SIDE;
+                currentAnimator = null;
             }
 
             @Override
@@ -200,61 +229,148 @@ public class MyFlipperView extends RelativeLayout {
         });
     }
 
-    public void initStartAnim() {
-        handler.postDelayed(animRunnable, 2000);
+    /**
+     * 重置初始状态参数
+     */
+    public void resetStateParams() {
+        hasPlayed = false;
+        canPlay = false;
+        currentAnimator = upAnimatorSet;
+        currentSide = A_SIDE;
     }
 
-    public void pauseAnim() {
+    /**
+     * 刷新开始动画
+     */
+    public void initStartAnim() {
+        if (canPlay) {
+            currentAnimator.start();
+        }
+    }
+
+    public void initStart() {
+        resetStateParams();
+        if (canPlay) {
+            currentAnimator.start();
+        }
+    }
+
+    /**
+     * 暂停动画
+     */
+    public void pauseAnimWhenScroll() {
         if (currentAnimator == null) return;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && needSlowlyScroll) {
             currentAnimator.pause();
-//            currentAnimator.end();
         } else {
-            if (!currentAnimator.isRunning()) {
+            if (currentAnimator == upAnimatorSet && currentSide == BOTH_SIDE)
+                isManuallyEnd = true;
+        }
+    }
+
+    /**
+     * 暂停动画
+     */
+    public void pauseAnimWhenChangePage() {
+        if (currentAnimator == null) return;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && needSlowlyScroll) {
+            currentAnimator.pause();
+        } else {
+            if (currentAnimator.isRunning()) {
+                if (currentAnimator == upAnimatorSet) {
+                    isManuallyEnd = true;
+                }
                 currentAnimator.end();
+            }
+        }
+        setHasShowSide();
+    }
+
+    /**
+     * 重置埋点标记参数
+     */
+    public void resetMaidianFlag() {
+        ifHasShowB = false;
+        ifHasShowA = false;
+    }
+
+    /**
+     * 切换页面状态下恢复播放动画
+     */
+    public void restartAnimWhenChangePage() {
+        resetMaidianFlag();
+        if (canPlay) {
+            if (currentAnimator == null) return;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && needSlowlyScroll) {
+                if (currentAnimator.isPaused()) {
+                    currentAnimator.resume();
+                } else if (!hasPlayed) {
+                    currentAnimator.start();
+                }
+            } else {
+                if (!hasPlayed) {
+                    currentAnimator.start();
+                } else if (currentSide == B_SIDE) {
+                    isManuallyEnd = false;
+                    currentAnimator = downAnimatorSet;
+                    currentAnimator.start();
+                }
+            }
+            setHasShowSide();
+        } else {
+            if (UIUtil.isDisplayed(this, 10)) {
+                setHasShowSide();
             }
         }
     }
 
-    public void restartAnim() {
-        if (currentAnimator == null) return;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            currentAnimator.resume();
+    /**
+     * 设置埋点参数标记
+     */
+    private void setHasShowSide() {
+        ifHasShowA = currentSide == A_SIDE || currentSide == BOTH_SIDE;
+        ifHasShowB = currentSide == B_SIDE || currentSide == BOTH_SIDE;
+    }
+
+    /**
+     * 滑动状态下恢复动画
+     */
+    public void restartAnimWhenScroll() {
+        if (currentAnimator == null || !canPlay) return;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && needSlowlyScroll) {
+            if (currentAnimator.isPaused()) {
+                currentAnimator.resume();
+            } else if (!hasPlayed) {
+                currentAnimator.start();
+            }
+        } else {
+            if (!hasPlayed && !currentAnimator.isRunning()) {
+                currentAnimator.start();
+            } else if (currentSide == B_SIDE && !currentAnimator.isStarted()) {
+                isManuallyEnd = false;
+                currentAnimator = downAnimatorSet;
+                currentAnimator.start();
+            }
         }
     }
 
+    /**
+     * 去除残留的runnable
+     */
     public void removeAllCallback() {
         handler.removeCallbacks(animRunnable);
     }
 
-    public void playBtoA() {
-        if (downAnimatorSet != null) {
-            currentAnimator = downAnimatorSet;
-            downAnimatorSet.start();
-        }
+    /**
+     * 检验埋点状态 —— fragment两种情况下需要主动调用：
+     * 1.stop
+     * 2.start
+     */
+    public void checkMaidian() {
+        if (maidianListener != null)
+            maidianListener.onBothSideShow(ifHasShowA, ifHasShowB);
     }
 
-    /**
-     * 从A-B过程中停止
-     */
-    public void pauseForAtoB() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            upAnimatorSet.pause();
-        } else {
-            currentSide = B_SIDE;
-        }
-    }
-
-    /**
-     * 从B-A过程中停止
-     */
-    public void pauseForBtoA() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            downAnimatorSet.pause();
-        } else {
-            currentSide = A_SIDE_REVERT;
-        }
-    }
 
     /**
      * 动画runnable
@@ -279,16 +395,22 @@ public class MyFlipperView extends RelativeLayout {
         @Override
         public void run() {
             removeUselessRunnable();
-            switch (animType) {
-                case AtoB:
-                    currentAnimator = upAnimatorSet;
-                    break;
-                case BtoA:
-                    currentAnimator = downAnimatorSet;
-                    break;
+            if (canPlay) {
+                switch (animType) {
+                    case AtoB:
+                        currentAnimator = upAnimatorSet;
+                        break;
+                    case BtoA:
+                        currentAnimator = downAnimatorSet;
+                        break;
+                    case END:
+                        return;
+                }
+                currentAnimator.start();
+            } else {
+                handler.postDelayed(this, 2000);
             }
-            currentAnimator.start();
         }
     }
-
 }
+

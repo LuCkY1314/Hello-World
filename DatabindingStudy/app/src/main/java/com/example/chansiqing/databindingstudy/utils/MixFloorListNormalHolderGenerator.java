@@ -1,6 +1,7 @@
 package com.example.chansiqing.databindingstudy.utils;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
@@ -24,6 +25,9 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_AUTO_ADAPTER;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_BINDING_TEST;
@@ -42,6 +46,7 @@ import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_
  * @date: 2018-10-30 17:44
  */
 public class MixFloorListNormalHolderGenerator {
+    private static Map<String, FloorMatchDataInterface> floorMap = new HashMap();
 
     /**
      * 楼层生成
@@ -117,7 +122,13 @@ public class MixFloorListNormalHolderGenerator {
      * @return
      */
     private static FloorMatchDataInterface pickFloor(Context context, int viewType) {
-        FloorMatchDataInterface view = null;
+        FloorMatchDataInterface view = floorMap.get(viewType + "");
+        if (null != view) {
+            if (null != view.getParent()) {
+                ((ViewGroup) view.getParent()).removeView((View) view);
+            }
+            return view;
+        }
         switch (viewType) {
             case FLOOR_AUTO_ADAPTER:
                 view = new AutoAdapterFloor(context);
@@ -138,6 +149,7 @@ public class MixFloorListNormalHolderGenerator {
                 view = new ValueAnimFloor(context);
                 break;
         }
+        floorMap.put(viewType + "", view);
         return view;
     }
 }

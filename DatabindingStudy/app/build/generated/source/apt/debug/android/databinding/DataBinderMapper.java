@@ -19,8 +19,8 @@ class DataBinderMapper  {
                     return com.example.chansiqing.databindingstudy.databinding.FloorAutoAdapterBinding.bind(view, bindingComponent);
                 case com.example.chansiqing.databindingstudy.R.layout.list_item_list_floor:
                     return com.example.chansiqing.databindingstudy.databinding.ListItemListFloorBinding.bind(view, bindingComponent);
-                case com.example.chansiqing.databindingstudy.R.layout.activity_main_frame:
-                    return com.example.chansiqing.databindingstudy.databinding.ActivityMainFrameBinding.bind(view, bindingComponent);
+                case com.example.chansiqing.databindingstudy.R.layout.fragment_home:
+                    return com.example.chansiqing.databindingstudy.databinding.FragmentHomeBinding.bind(view, bindingComponent);
                 case com.example.chansiqing.databindingstudy.R.layout.activity_mix_list:
                     return com.example.chansiqing.databindingstudy.databinding.ActivityMixListBinding.bind(view, bindingComponent);
                 case com.example.chansiqing.databindingstudy.R.layout.activity_complex_floor:
@@ -77,9 +77,9 @@ class DataBinderMapper  {
                 }
                 break;
             }
-            case -653116573: {
-                if(tag.equals("layout/activity_main_frame_0")) {
-                    return com.example.chansiqing.databindingstudy.R.layout.activity_main_frame;
+            case -1115993926: {
+                if(tag.equals("layout/fragment_home_0")) {
+                    return com.example.chansiqing.databindingstudy.R.layout.fragment_home;
                 }
                 break;
             }

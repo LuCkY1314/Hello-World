@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/tab_image"
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp3"
+        android:textSize="@dimen/sp12"
+        tools:text="1234252545"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/tab_point"
+        android:layout_width="@dimen/dp5"
+        android:layout_height="@dimen/dp5"
+        android:layout_alignBottom="@+id/tab_image"
+        android:layout_alignRight="@+id/tab_image"
+        android:visibility="gone"/>
+</RelativeLayout>

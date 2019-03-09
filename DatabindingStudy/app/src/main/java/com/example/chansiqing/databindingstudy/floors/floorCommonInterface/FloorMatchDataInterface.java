@@ -1,6 +1,8 @@
 package com.example.chansiqing.databindingstudy.floors.floorCommonInterface;
 
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
 /**
  * 每个楼层view需要实现的接口，用于在混合楼层中统一调用方法
@@ -22,6 +24,13 @@ public interface FloorMatchDataInterface {
      * @return
      */
     View getRootView();
+
+    /**
+     * 拿到view的父容器
+     *
+     * @return
+     */
+    ViewParent getParent();
 
     /**
      * 设置该楼层高度

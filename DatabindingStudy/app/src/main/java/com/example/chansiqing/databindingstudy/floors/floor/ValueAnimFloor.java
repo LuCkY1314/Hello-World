@@ -1,7 +1,6 @@
 package com.example.chansiqing.databindingstudy.floors.floor;
 
 import android.content.Context;
-import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import com.example.chansiqing.databindingstudy.data.ValueAnimFloorData;
 import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.AttachAndDetachInterface;
 import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.FloorMatchDataInterface;
-import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.OnViewRecycledInterface;
 import com.example.chansiqing.databindingstudy.utils.BaseEvent;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.example.chansiqing.databindingstudy.view.MyFlipperView;
@@ -35,12 +33,11 @@ import java.util.List;
 public class ValueAnimFloor extends RelativeLayout implements FloorMatchDataInterface, AttachAndDetachInterface {
     private Context context;
     private static final int MARGIN_WIDTH = UIUtil.dp2px(15);
-    private static final int FLOOR_HEIGHT = UIUtil.dp2px(200);
+    private static final int FLOOR_HEIGHT = UIUtil.dp2px(100);
     private static final int LINEAR_HEIGHT = UIUtil.dp2px(80);
     private static final int ITEM_SIZE = UIUtil.dp2px(40);
-    private Handler handler = new Handler(getContext().getMainLooper());
-    private static final int AtoB = 0, BtoA = 1;
     private MyFlipperView myFlipperView;
+    private List<ValueAnimFloorData.ItemData> data;
 
     public ValueAnimFloor(Context context) {
         super(context);
@@ -61,10 +58,22 @@ public class ValueAnimFloor extends RelativeLayout implements FloorMatchDataInte
     private void init() {
         EventBus.getDefault().register(this);
         myFlipperView = new MyFlipperView(getContext(), MyFlipperView.VERTICAL);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LINEAR_HEIGHT);
         myFlipperView.setEachLineHeight(LINEAR_HEIGHT);
         myFlipperView.addA_Layout(generateEachLinearLayout(MyFlipperView.FIRST_LAYOUT_ID));
         myFlipperView.addB_Layout(generateEachLinearLayout(MyFlipperView.SECOND_LAYOUT_ID));
-        addView(myFlipperView);
+        myFlipperView.setMaidianListener(new MyFlipperView.MaidianForFlipperSKU() {
+            @Override
+            public void onBothSideShow(boolean ifHasShowA, boolean ifHasShowB) {
+                if (ifHasShowA) {
+                    Toast.makeText(getContext(), "A_SIDE_SHOW", Toast.LENGTH_SHORT).show();
+                    if (ifHasShowB)
+                        Toast.makeText(getContext(), "AB_SIDE_SHOW", Toast.LENGTH_SHORT).show();
+                } else if (ifHasShowB)
+                    Toast.makeText(getContext(), "B_SIDE_SHOW", Toast.LENGTH_SHORT).show();
+            }
+        });
+        addView(myFlipperView, params);
     }
 
     /**
@@ -86,9 +95,16 @@ public class ValueAnimFloor extends RelativeLayout implements FloorMatchDataInte
                 @Override
                 public void onClick(View v) {
                     if (position == 1) {
-                        myFlipperView.pauseAnim();
+                        myFlipperView.pauseAnimWhenScroll();
                     } else {
-                        myFlipperView.restartAnim();
+                        myFlipperView.initStart();
+                    }
+                    if (finalI + (position - 1) * 3 == 3) {
+                        Toast.makeText(getContext(), "高性能启用", Toast.LENGTH_SHORT).show();
+                        myFlipperView.setNeedSlowlyScroll(true);
+                    } else if (finalI + (position - 1) * 3 == 5) {
+                        Toast.makeText(getContext(), "低性能启用", Toast.LENGTH_SHORT).show();
+                        myFlipperView.setNeedSlowlyScroll(false);
                     }
                     Toast.makeText(getContext(), "点你" + (finalI + (position - 1) * 3) + "爹作甚", Toast.LENGTH_SHORT).show();
                 }
@@ -140,6 +156,8 @@ public class ValueAnimFloor extends RelativeLayout implements FloorMatchDataInte
         if (data == null) return;
         updateMargin(data.getMargin());
         updateItemData(data.getItems());
+        this.data = data.getItems();
+        myFlipperView.setCanPlay(UIUtil.isDisplayed(myFlipperView, 50));
         myFlipperView.initStartAnim();
     }
 
@@ -195,27 +213,30 @@ public class ValueAnimFloor extends RelativeLayout implements FloorMatchDataInte
         String id = messageEvent.getId();
         switch (id) {
             case BaseEvent.ON_PAUSE:
-                myFlipperView.pauseAnim();
+                myFlipperView.checkMaidian();
+                myFlipperView.pauseAnimWhenChangePage();
                 myFlipperView.removeAllCallback();
-                Toast.makeText(getContext(), "停止了", Toast.LENGTH_SHORT).show();
                 break;
             case BaseEvent.ON_RESUME:
-                myFlipperView.restartAnim();
-                Toast.makeText(getContext(), "重现了", Toast.LENGTH_SHORT).show();
+                myFlipperView.checkMaidian();
+                myFlipperView.setCanPlay(UIUtil.isDisplayed(myFlipperView, 50));
+                myFlipperView.restartAnimWhenChangePage();
                 break;
             case BaseEvent.ON_SCROLL:
-                Toast.makeText(getContext(), "在滚动", Toast.LENGTH_SHORT).show();
+                myFlipperView.pauseAnimWhenScroll();
                 break;
             case BaseEvent.ON_SCROLL_STOP:
-                Toast.makeText(getContext(), "滚停了", Toast.LENGTH_SHORT).show();
+                myFlipperView.setCanPlay(UIUtil.isDisplayed(myFlipperView, 50));
+                myFlipperView.restartAnimWhenScroll();
                 break;
         }
     }
 
-
     @Override
     public void attachToRecycleView() {
-
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
     }
 
     @Override

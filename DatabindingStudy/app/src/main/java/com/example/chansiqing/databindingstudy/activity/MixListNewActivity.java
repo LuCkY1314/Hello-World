@@ -27,12 +27,12 @@ import java.util.List;
  */
 public class MixListNewActivity extends AppCompatActivity {
     private ActivityMixListBinding binding;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mix_list);
         initView(binding);
-        //EventBus.getDefault().register(this);
     }
 
     private void initView(ActivityMixListBinding binding) {
@@ -62,23 +62,5 @@ public class MixListNewActivity extends AppCompatActivity {
             list.add(data);
         }
         return list;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_RESUME));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        EventBus.getDefault().post(new BaseEvent(BaseEvent.ON_PAUSE));
-    }
-
-    @Override
-
-    protected void onDestroy() {
-        super.onDestroy();
     }
 }

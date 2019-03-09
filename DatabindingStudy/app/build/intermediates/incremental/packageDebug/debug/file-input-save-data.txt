@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jan 30 11:55:56 CST 2019
+#Sun Feb 17 12:08:39 CST 2019
 2.base=/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/transforms/mergeJniLibs/debug/0
 5.set=NATIVE_RESOURCE
 0.path=classes.dex

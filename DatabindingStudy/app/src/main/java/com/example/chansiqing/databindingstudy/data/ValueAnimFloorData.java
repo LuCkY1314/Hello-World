@@ -64,6 +64,15 @@ public class ValueAnimFloorData extends BaseData {
     public static class ItemData extends BaseData {
         private String url;
         private String text;
+        private String expo;
+
+        public String getExpo() {
+            return expo;
+        }
+
+        public void setExpo(String expo) {
+            this.expo = expo;
+        }
 
         public String getUrl() {
             return url;
@@ -81,6 +90,9 @@ public class ValueAnimFloorData extends BaseData {
             this.text = text;
         }
 
+        public ItemData() {
+        }
+
         @Override
         public int describeContents() {
             return 0;
@@ -90,14 +102,13 @@ public class ValueAnimFloorData extends BaseData {
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(this.url);
             dest.writeString(this.text);
-        }
-
-        public ItemData() {
+            dest.writeString(this.expo);
         }
 
         protected ItemData(Parcel in) {
             this.url = in.readString();
             this.text = in.readString();
+            this.expo = in.readString();
         }
 
         public static final Creator<ItemData> CREATOR = new Creator<ItemData>() {

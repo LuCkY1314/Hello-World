@@ -63,7 +63,7 @@ public class ComplexFloorActivity extends AppCompatActivity {
      */
     private void initMockData(ActivityComplexFloorBinding binding) {
         //flipperView
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             FlipperData data = new FlipperData();
             data.setText("这是一条资讯 " + i);
             data.setUrl(url);

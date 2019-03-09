@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [com.android.databinding:adapters:1.3.1] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/adapters-1.3.1.aar/d923f3a4769ead03b10c1bb0798ecf6f/AndroidManifest.xml:17:1-26:12
 MERGED from [com.android.databinding:library:1.3.1] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/edc5e1d852ccebb87bd8906a04d320ad/AndroidManifest.xml:17:1-26:12
 MERGED from [com.android.support:appcompat-v7:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/bad46738083f1a4c88106afe30b21242/AndroidManifest.xml:17:1-31:12
@@ -22,29 +22,39 @@ MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/chansiqing/.gradle/caches/
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/28ddbcc2645cee68e88f2be2feb04402/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/25c8a3d1a66b6fb12336072bed4cf8bd/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/38e153ad3c1aecdd0e6280ee39c4325b/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:11-60
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:3:11-60
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:11-57
 	android:versionCode
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-29:12
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:3:11-69
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:4:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:5:5-66
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:8:22-78
 application
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:6:5-27:19
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:10:5-33:19
 MERGED from [com.android.support:appcompat-v7:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/bad46738083f1a4c88106afe30b21242/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/bad46738083f1a4c88106afe30b21242/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/0358826ddf31444a22c533192bb8c6d2/AndroidManifest.xml:25:5-29:19
@@ -64,53 +74,59 @@ MERGED from [com.android.support:support-core-ui:26.0.0] /Users/chansiqing/.grad
 MERGED from [com.android.support:support-compat:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/9e3db3238b999ced42ceb2359d7690ca/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.0.0] /Users/chansiqing/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/9e3db3238b999ced42ceb2359d7690ca/AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:14:9-41
+	tools:ignore
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:18:9-48
 	android:roundIcon
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:15:9-54
 	android:icon
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:17:9-40
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:7:9-39
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:11:9-39
 activity#com.example.chansiqing.databindingstudy.activity.MainActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:14:9-15:20
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:19:9-20:20
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:14:19-56
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:19:19-56
 activity#com.example.chansiqing.databindingstudy.activity.MainFrameActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:16:9-22:20
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:21:9-27:20
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:16:19-61
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:21:19-61
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:17:13-21:29
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:18:17-68
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:23:17-68
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:20:17-76
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:25:17-76
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:20:27-74
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:25:27-74
 activity#com.example.chansiqing.databindingstudy.activity.ComplexFloorActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:23:9-66
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:28:9-66
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:23:19-64
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:28:19-64
 activity#com.example.chansiqing.databindingstudy.activity.MixListActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:24:9-61
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:29:9-61
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:24:19-59
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:29:19-59
 activity#com.example.chansiqing.databindingstudy.activity.MixListNewActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:25:9-64
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:25:19-62
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:30:19-62
 activity#com.example.chansiqing.databindingstudy.activity.MyPageViewActivity
-ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:26:9-64
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:31:9-64
 	android:name
-		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:26:19-62
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:31:19-62
+activity#com.example.chansiqing.databindingstudy.activity.PictureCatchActivity
+ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:32:9-66
+	android:name
+		ADDED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml:32:19-64
 uses-sdk
 INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/chansiqing/mine/Hello-World/DatabindingStudy/app/src/main/AndroidManifest.xml
