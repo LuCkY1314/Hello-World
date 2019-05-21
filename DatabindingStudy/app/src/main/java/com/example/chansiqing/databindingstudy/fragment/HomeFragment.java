@@ -110,10 +110,18 @@ public class HomeFragment extends BaseFragment {
         btnData4.setMarginHorizon(UIUtil.dp2px(20));
         btnData4.setMarginVertical(UIUtil.dp2px(20));
         btnData4.setSimpleBtnDrawableUrl("http://m.360buyimg.com/mobilecms/jfs/t27775/135/517402683/124382/348be7c3/5bb06cc6N0a8b634a.jpeg!q70.jpg.webp");
+        MainFrameData.ItemBtnData btnData5 = new MainFrameData.ItemBtnData();
+        btnData5.setSimpleBtnName("去另一个次元");
+        btnData5.setSimpleBtnVisible(true);
+        btnData5.setMarginHorizon(UIUtil.dp2px(20));
+        btnData5.setMarginVertical(UIUtil.dp2px(20));
+        btnData5.setSimpleBtnDrawableUrl("http://m.360buyimg.com/mobilecms/jfs/t27775/135/517402683/124382/348be7c3/5bb06cc6N0a8b634a.jpeg!q70.jpg.webp");
+
         data.setBtn1(btnData1);
         data.setBtn2(btnData2);
         data.setBtn3(btnData3);
         data.setBtn4(btnData4);
+        data.setBtn5(btnData5);
         return data;
     }
 }

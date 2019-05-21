@@ -14,7 +14,7 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.rotate, 5);
+        sViewsWithIds.put(R.id.rotate, 6);
     }
     // views
     @NonNull
@@ -25,6 +25,8 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
     public final android.widget.Button btn3;
     @NonNull
     public final android.widget.Button btn4;
+    @NonNull
+    public final android.widget.Button btn5;
     @NonNull
     public final android.widget.RelativeLayout root;
     @NonNull
@@ -38,6 +40,8 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
     private final android.view.View.OnClickListener mCallback2;
     @Nullable
     private final android.view.View.OnClickListener mCallback1;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback3;
     // values
     // listeners
     private OnClickListenerImpl mPresenterOnClickAndroidViewViewOnClickListener;
@@ -45,7 +49,7 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
 
     public FragmentHomeBinding(@NonNull android.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
         super(bindingComponent, root, 1);
-        final Object[] bindings = mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds);
+        final Object[] bindings = mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds);
         this.btn1 = (android.widget.Button) bindings[1];
         this.btn1.setTag(null);
         this.btn2 = (android.widget.Button) bindings[2];
@@ -54,13 +58,16 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
         this.btn3.setTag(null);
         this.btn4 = (android.widget.Button) bindings[4];
         this.btn4.setTag(null);
+        this.btn5 = (android.widget.Button) bindings[5];
+        this.btn5.setTag(null);
         this.root = (android.widget.RelativeLayout) bindings[0];
         this.root.setTag(null);
-        this.rotate = (android.widget.ImageView) bindings[5];
+        this.rotate = (android.widget.ImageView) bindings[6];
         setRootTag(root);
         // listeners
         mCallback2 = new android.databinding.generated.callback.OnClickListener(this, 2);
         mCallback1 = new android.databinding.generated.callback.OnClickListener(this, 1);
+        mCallback3 = new android.databinding.generated.callback.OnClickListener(this, 3);
         invalidateAll();
     }
 
@@ -155,6 +162,7 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
         com.example.chansiqing.databindingstudy.viewModel.MainFramePresenter presenter = mPresenter;
         int presenterIsVisibleItemBtn1IsSimpleBtnVisible = 0;
         com.example.chansiqing.databindingstudy.data.MainFrameData.ItemBtnData itemBtn3 = null;
+        boolean itemBtn5IsSimpleBtnVisible = false;
         int itemBtn3MarginVertical = 0;
         java.lang.String itemBtn3GetSimpleBtnName = null;
         boolean itemBtn2IsSimpleBtnVisible = false;
@@ -163,13 +171,17 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
         com.example.chansiqing.databindingstudy.data.MainFrameData.ItemBtnData itemBtn2 = null;
         java.lang.String itemBtn4GetSimpleBtnName = null;
         int presenterIsVisibleItemBtn2IsSimpleBtnVisible = 0;
+        java.lang.String itemBtn5GetSimpleBtnName = null;
         boolean itemBtn3IsSimpleBtnVisible = false;
+        com.example.chansiqing.databindingstudy.data.MainFrameData.ItemBtnData itemBtn5 = null;
         int presenterIsVisibleItemBtn4IsSimpleBtnVisible = 0;
         com.example.chansiqing.databindingstudy.data.MainFrameData.ItemBtnData itemBtn1 = null;
         int presenterIsVisibleItemBtn3IsSimpleBtnVisible = 0;
+        int presenterIsVisibleItemBtn5IsSimpleBtnVisible = 0;
         com.example.chansiqing.databindingstudy.data.MainFrameData.ItemBtnData itemBtn4 = null;
         java.lang.String itemBtn2SimpleBtnName = null;
         java.lang.String itemBtn1GetSimpleBtnName = null;
+        int itemBtn5MarginVertical = 0;
 
         if ((dirtyFlags & 0x7L) != 0) {
 
@@ -180,6 +192,8 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
                     itemBtn3 = item.getBtn3();
                     // read item.btn2
                     itemBtn2 = item.getBtn2();
+                    // read item.btn5
+                    itemBtn5 = item.getBtn5();
                     // read item.btn1
                     itemBtn1 = item.getBtn1();
                     // read item.btn4
@@ -199,6 +213,12 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
                         itemBtn2MarginVertical = itemBtn2.getMarginVertical();
                         // read item.btn2.simpleBtnName
                         itemBtn2SimpleBtnName = itemBtn2.getSimpleBtnName();
+                    }
+                    if (itemBtn5 != null) {
+                        // read item.btn5.getSimpleBtnName
+                        itemBtn5GetSimpleBtnName = itemBtn5.getSimpleBtnName();
+                        // read item.btn5.marginVertical
+                        itemBtn5MarginVertical = itemBtn5.getMarginVertical();
                     }
                     if (itemBtn1 != null) {
                         // read item.btn1.getSimpleBtnName
@@ -220,6 +240,10 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
                     // read item.btn2.isSimpleBtnVisible
                     itemBtn2IsSimpleBtnVisible = itemBtn2.isSimpleBtnVisible();
                 }
+                if (itemBtn5 != null) {
+                    // read item.btn5.isSimpleBtnVisible
+                    itemBtn5IsSimpleBtnVisible = itemBtn5.isSimpleBtnVisible();
+                }
                 if (itemBtn1 != null) {
                     // read item.btn1.isSimpleBtnVisible
                     itemBtn1IsSimpleBtnVisible = itemBtn1.isSimpleBtnVisible();
@@ -235,6 +259,8 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
                     presenterIsVisibleItemBtn3IsSimpleBtnVisible = presenter.isVisible(itemBtn3IsSimpleBtnVisible);
                     // read presenter.isVisible(item.btn2.isSimpleBtnVisible)
                     presenterIsVisibleItemBtn2IsSimpleBtnVisible = presenter.isVisible(itemBtn2IsSimpleBtnVisible);
+                    // read presenter.isVisible(item.btn5.isSimpleBtnVisible)
+                    presenterIsVisibleItemBtn5IsSimpleBtnVisible = presenter.isVisible(itemBtn5IsSimpleBtnVisible);
                     // read presenter.isVisible(item.btn1.isSimpleBtnVisible)
                     presenterIsVisibleItemBtn1IsSimpleBtnVisible = presenter.isVisible(itemBtn1IsSimpleBtnVisible);
                     // read presenter.isVisible(item.btn4.isSimpleBtnVisible)
@@ -265,6 +291,8 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
             android.databinding.adapters.TextViewBindingAdapter.setText(this.btn3, itemBtn3GetSimpleBtnName);
             com.example.chansiqing.databindingstudy.utils.MyBindingAdapter.setMarginTop(this.btn4, itemBtn4MarginVertical);
             android.databinding.adapters.TextViewBindingAdapter.setText(this.btn4, itemBtn4GetSimpleBtnName);
+            com.example.chansiqing.databindingstudy.utils.MyBindingAdapter.setMarginTop(this.btn5, itemBtn5MarginVertical);
+            android.databinding.adapters.TextViewBindingAdapter.setText(this.btn5, itemBtn5GetSimpleBtnName);
         }
         if ((dirtyFlags & 0x7L) != 0) {
             // api target 1
@@ -273,12 +301,14 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
             this.btn2.setVisibility(presenterIsVisibleItemBtn2IsSimpleBtnVisible);
             this.btn3.setVisibility(presenterIsVisibleItemBtn3IsSimpleBtnVisible);
             this.btn4.setVisibility(presenterIsVisibleItemBtn4IsSimpleBtnVisible);
+            this.btn5.setVisibility(presenterIsVisibleItemBtn5IsSimpleBtnVisible);
         }
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
             this.btn2.setOnClickListener(mCallback1);
             this.btn4.setOnClickListener(mCallback2);
+            this.btn5.setOnClickListener(mCallback3);
         }
     }
     // Listener Stub Implementations
@@ -343,6 +373,24 @@ public class FragmentHomeBinding extends android.databinding.ViewDataBinding imp
 
                         presenter.onClick(btn2, itemBtn2);
                     }
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // presenter != null
+                boolean presenterJavaLangObjectNull = false;
+                // presenter
+                com.example.chansiqing.databindingstudy.viewModel.MainFramePresenter presenter = mPresenter;
+
+
+
+                presenterJavaLangObjectNull = (presenter) != (null);
+                if (presenterJavaLangObjectNull) {
+
+
+
+                    presenter.onClick(callbackArg_0);
                 }
                 break;
             }

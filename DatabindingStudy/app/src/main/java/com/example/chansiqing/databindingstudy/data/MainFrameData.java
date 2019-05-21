@@ -18,7 +18,7 @@ import android.os.Parcelable;
  * @date: 2018-09-30 14:41
  */
 public class MainFrameData extends BaseData {
-    private ItemBtnData btn1, btn2, btn3, btn4;
+    private ItemBtnData btn1, btn2, btn3, btn4, btn5;
 
     public MainFrameData() {
     }
@@ -55,36 +55,12 @@ public class MainFrameData extends BaseData {
         this.btn4 = btn4;
     }
 
-    protected MainFrameData(Parcel in) {
-        btn1 = in.readParcelable(ItemBtnData.class.getClassLoader());
-        btn2 = in.readParcelable(ItemBtnData.class.getClassLoader());
-        btn3 = in.readParcelable(ItemBtnData.class.getClassLoader());
-        btn4 = in.readParcelable(ItemBtnData.class.getClassLoader());
+    public ItemBtnData getBtn5() {
+        return btn5;
     }
 
-    public static final Creator<MainFrameData> CREATOR = new Creator<MainFrameData>() {
-        @Override
-        public MainFrameData createFromParcel(Parcel in) {
-            return new MainFrameData(in);
-        }
-
-        @Override
-        public MainFrameData[] newArray(int size) {
-            return new MainFrameData[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(btn1, i);
-        parcel.writeParcelable(btn2, i);
-        parcel.writeParcelable(btn3, i);
-        parcel.writeParcelable(btn4, i);
+    public void setBtn5(ItemBtnData btn5) {
+        this.btn5 = btn5;
     }
 
     public static class ItemBtnData implements Parcelable {
@@ -171,4 +147,38 @@ public class MainFrameData extends BaseData {
             }
         };
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(this.btn1, flags);
+        dest.writeParcelable(this.btn2, flags);
+        dest.writeParcelable(this.btn3, flags);
+        dest.writeParcelable(this.btn4, flags);
+        dest.writeParcelable(this.btn5, flags);
+    }
+
+    protected MainFrameData(Parcel in) {
+        this.btn1 = in.readParcelable(ItemBtnData.class.getClassLoader());
+        this.btn2 = in.readParcelable(ItemBtnData.class.getClassLoader());
+        this.btn3 = in.readParcelable(ItemBtnData.class.getClassLoader());
+        this.btn4 = in.readParcelable(ItemBtnData.class.getClassLoader());
+        this.btn5 = in.readParcelable(ItemBtnData.class.getClassLoader());
+    }
+
+    public static final Creator<MainFrameData> CREATOR = new Creator<MainFrameData>() {
+        @Override
+        public MainFrameData createFromParcel(Parcel source) {
+            return new MainFrameData(source);
+        }
+
+        @Override
+        public MainFrameData[] newArray(int size) {
+            return new MainFrameData[size];
+        }
+    };
 }

@@ -13,4 +13,5 @@ public class FloorTypeUtil {
     public final static int FLOOR_ROTATE_ANIM = 10004;//翻转动画楼层
     public final static int FLOOR_VALUE_ANIM = 10005;//属性动画
     public final static int FLOOR_LIST_TEST = 10006;//列表测试楼层
+    public final static int FLOOR_SINGLE_ANNOUNCEMENT = 10007;//公告自动播放楼层
 }

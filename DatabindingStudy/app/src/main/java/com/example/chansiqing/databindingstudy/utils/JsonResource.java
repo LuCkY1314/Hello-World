@@ -1,5 +1,6 @@
 package com.example.chansiqing.databindingstudy.utils;
 
+import com.example.chansiqing.databindingstudy.data.AnnouncementData;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.ListTestFloorData;
@@ -22,7 +23,8 @@ public class JsonResource {
     public static final String url = "https://m.360buyimg.com/mobilecms/jfs/t23650/360/507299913/19947/9d079f65/5b3349d7n36ef9fdb.jpg!q70.jpg.webp";
     public static final String url2 = "https://m.360buyimg.com/mobilecms/jfs/t19042/334/481621482/316610/571aaa33/5a7c2b43N3dd6ea25.jpeg!q70.jpg.webp";
     public static final String url3 = "https://m.360buyimg.com/mobilecms/s285x285_jfs/t1/17043/31/4663/199895/5c33fbd2E3a4d4bc2/0019e5c76c8bc53a.jpg!q70.jpg.webp";
-    public static String[] urls = new String[]{url, url2, url3};
+    public static final String[] urls = new String[]{url, url2, url3};
+    private static final Gson GSON = new Gson();
     public static final String listTestJson = getListTestJson();
     public static final String listTestNewJson = getListTestNewJson();
     public static final String autoAdapterJson = getAutoAdapterJson();
@@ -30,14 +32,15 @@ public class JsonResource {
     public static final String scrollFloorJson = getScrollFloorJson();
     public static final String rotateFloorJson = getRotateFloorJson();
     public static final String valueAnimFloorJson = getValueAnimFloorJson();
+    public static final String singleAnnouncementFloorJson = getSingleAnnouncementFloorJson();
     public static final String[] list = new String[]{autoAdapterJson, bindingAdapterTestJson, listTestJson};
-    public static final String[] listNew = new String[]{autoAdapterJson, bindingAdapterTestJson, scrollFloorJson, rotateFloorJson, valueAnimFloorJson, listTestNewJson};
+    public static final String[] listNew = new String[]{autoAdapterJson, bindingAdapterTestJson, scrollFloorJson, rotateFloorJson, valueAnimFloorJson, listTestNewJson, singleAnnouncementFloorJson};
 
     private static String getAutoAdapterJson() {
         AutoAdapterFloorData data = new AutoAdapterFloorData();
         data.setText("开始测试");
         data.setNeedColor(true);
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
     }
 
     private static String getListTestJson() {
@@ -53,7 +56,7 @@ public class JsonResource {
         }
         ListTestFloorData data = new ListTestFloorData();
         data.setList(list);
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
     }
 
     private static String getListTestNewJson() {
@@ -67,7 +70,7 @@ public class JsonResource {
             data2.setMarginHorizon(12);
             list.add(data2);
         }
-        return new Gson().toJson(list);
+        return GSON.toJson(list);
     }
 
     private static String getBindingAdapterTestJson() {
@@ -75,20 +78,20 @@ public class JsonResource {
         data.setShowDefault(true);
         data.setUrl(url);
         data.setUrl2(url2);
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
     }
 
     private static String getScrollFloorJson() {
         ScrollData data = new ScrollData();
         data.setBgUrl("");
         data.setContentUrl("");
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
     }
 
     private static String getRotateFloorJson() {
         RotateFloorData data = new RotateFloorData();
         data.setTimes(2);
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
     }
 
     private static String getValueAnimFloorJson() {
@@ -105,7 +108,19 @@ public class JsonResource {
         ValueAnimFloorData data = new ValueAnimFloorData();
         data.setItems(list);
         data.setMargin(UIUtil.dp2px(15));
-        return new Gson().toJson(data);
+        return GSON.toJson(data);
+    }
+
+    private static String getSingleAnnouncementFloorJson() {
+        List<AnnouncementData> list = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            AnnouncementData data = new AnnouncementData();
+            data.setUrl(urls[i % urls.length]);
+            data.setAdText("ad:" + i);
+            data.setOperateText("立即绑定" + i);
+            list.add(data);
+        }
+        return GSON.toJson(list);
     }
 
     public static void main(String[] args) {

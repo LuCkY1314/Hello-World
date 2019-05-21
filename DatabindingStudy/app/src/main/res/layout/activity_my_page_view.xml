@@ -16,4 +16,10 @@
         android:layout_below="@+id/view_pager"
         android:layout_centerHorizontal="true"
         android:text="改变数据源"/>
+
+    <com.example.chansiqing.databindingstudy.floors.floor.BabelNewsRightsView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/babel"
+        android:layout_below="@+id/btn"/>
 </RelativeLayout>

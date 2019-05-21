@@ -2,7 +2,6 @@ package com.example.chansiqing.databindingstudy.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,7 +11,6 @@ import android.provider.MediaStore.Files;
 import android.provider.MediaStore.Files.FileColumns;
 import android.util.Log;
 
-import com.example.chansiqing.databindingstudy.activity.MyApp;
 import com.example.chansiqing.databindingstudy.data.Entity;
 
 import java.io.BufferedReader;
@@ -191,4 +189,5 @@ public class FileUtils {
         }
         return list;
     }
+
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.example.chansiqing.databindingstudy.data.FloorData;
 import com.example.chansiqing.databindingstudy.databinding.ActivityMixListBinding;
 import com.example.chansiqing.databindingstudy.floors.listAdapter.MixFloorListNormalAdapter;
 import com.example.chansiqing.databindingstudy.utils.BaseEvent;
+import com.example.chansiqing.databindingstudy.utils.FloorTypeUtil;
 import com.example.chansiqing.databindingstudy.utils.JsonResource;
 
 import org.greenrobot.eventbus.EventBus;
@@ -39,7 +41,7 @@ public class NewListFragment extends BaseFragment {
     }
 
     private void initView(ActivityMixListBinding binding) {
-        binding.recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycleView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         MixFloorListNormalAdapter adapter = new MixFloorListNormalAdapter();
         adapter.setData(initData());
         binding.recycleView.setAdapter(adapter);
@@ -62,7 +64,13 @@ public class NewListFragment extends BaseFragment {
 
     private List<FloorData> initData() {
         List<FloorData> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 3; i++) {
+            FloorData item = new FloorData();
+            item.setType(FloorTypeUtil.FLOOR_SINGLE_ANNOUNCEMENT + "");
+            item.setFloorJson(JsonResource.singleAnnouncementFloorJson);
+            list.add(item);
+        }
+        for (int i = 0; i < 7; i++) {
             FloorData data = new FloorData();
             data.setFloorJson(JsonResource.listNew[i % JsonResource.listNew.length]);
             data.setType((10001 + i % JsonResource.listNew.length) + "");

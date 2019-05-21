@@ -64,14 +64,27 @@
             android:visibility="@{presenter.isVisible(item.btn4.isSimpleBtnVisible)}"
             tools:text="仅为好看凑数的按钮"/>
 
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/dp40"
+            android:layout_below="@+id/btn4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@{item.btn5.marginVertical}"
+            android:onClick="@{(view)->presenter.onClick(view)}"
+            android:text="@{item.btn5.getSimpleBtnName}"
+            android:visibility="@{presenter.isVisible(item.btn5.isSimpleBtnVisible)}"
+            tools:text="去另一个次元"/>
+
         <ImageView
             android:id="@+id/rotate"
             android:layout_width="match_parent"
             android:layout_height="78dp"
-            android:layout_below="@+id/btn4"
+            android:layout_below="@+id/btn5"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:src="@drawable/rotate_image"/>
+
     </RelativeLayout>
 
 </layout>

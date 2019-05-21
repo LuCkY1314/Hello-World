@@ -54,6 +54,11 @@ public class MainFramePresenter {
                 Intent intent4 = new Intent(view.getContext(), MyPageViewActivity.class);
                 view.getContext().startActivity(intent4);
                 break;
+            case R.id.btn5:
+                Toast.makeText(view.getContext(), "时空穿梭", Toast.LENGTH_SHORT).show();
+                Intent intent5 = new Intent(view.getContext(), MyPageViewActivity.class);
+                view.getContext().startActivity(intent5);
+                break;
         }
     }
 

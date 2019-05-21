@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.chansiqing.databindingstudy.data.AnnouncementData;
 import com.example.chansiqing.databindingstudy.data.AutoAdapterFloorData;
 import com.example.chansiqing.databindingstudy.data.BindingAdapterTestFloorData;
 import com.example.chansiqing.databindingstudy.data.FloorData;
@@ -12,6 +13,7 @@ import com.example.chansiqing.databindingstudy.data.RotateFloorData;
 import com.example.chansiqing.databindingstudy.data.ScrollData;
 import com.example.chansiqing.databindingstudy.data.ValueAnimFloorData;
 import com.example.chansiqing.databindingstudy.floors.floor.AutoAdapterFloor;
+import com.example.chansiqing.databindingstudy.floors.floor.BabelNewsRightsView;
 import com.example.chansiqing.databindingstudy.floors.floor.BindingAdapterTestFloor;
 import com.example.chansiqing.databindingstudy.floors.floor.ValueAnimFloor;
 import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.FloorMatchDataInterface;
@@ -21,12 +23,10 @@ import com.example.chansiqing.databindingstudy.floors.floor.ScrollFloor;
 import com.example.chansiqing.databindingstudy.floors.listHolder.MixFloorBaseHolder;
 import com.google.gson.Gson;
 
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_AUTO_ADAPTER;
@@ -34,6 +34,7 @@ import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_LIST_TEST;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_ROTATE_ANIM;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_SCROLL;
+import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_SINGLE_ANNOUNCEMENT;
 import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_VALUE_ANIM;
 
 /**
@@ -46,6 +47,7 @@ import static com.example.chansiqing.databindingstudy.utils.FloorTypeUtil.FLOOR_
  * @date: 2018-10-30 17:44
  */
 public class MixFloorListNormalHolderGenerator {
+    private static final Gson GSON = new Gson();
     private static Map<String, FloorMatchDataInterface> floorMap = new HashMap();
 
     /**
@@ -91,23 +93,27 @@ public class MixFloorListNormalHolderGenerator {
         Object data = null;
         switch (floorType) {
             case FLOOR_AUTO_ADAPTER:
-                data = new Gson().fromJson(item.getFloorJson(), AutoAdapterFloorData.class);
+                data = GSON.fromJson(item.getFloorJson(), AutoAdapterFloorData.class);
                 break;
             case FLOOR_LIST_TEST:
-                ListTestFloorItemData[] listTestFloorItemData = new Gson().fromJson(item.getFloorJson(), ListTestFloorItemData[].class);
-                data = new ArrayList(Arrays.asList(listTestFloorItemData));
+                ListTestFloorItemData[] listTestFloorItemData = GSON.fromJson(item.getFloorJson(), ListTestFloorItemData[].class);
+                data = new ArrayList<>(Arrays.asList(listTestFloorItemData));
                 break;
             case FLOOR_BINDING_TEST:
-                data = new Gson().fromJson(item.getFloorJson(), BindingAdapterTestFloorData.class);
+                data = GSON.fromJson(item.getFloorJson(), BindingAdapterTestFloorData.class);
                 break;
             case FLOOR_SCROLL:
-                data = new Gson().fromJson(item.getFloorJson(), ScrollData.class);
+                data = GSON.fromJson(item.getFloorJson(), ScrollData.class);
                 break;
             case FLOOR_ROTATE_ANIM:
-                data = new Gson().fromJson(item.getFloorJson(), RotateFloorData.class);
+                data = GSON.fromJson(item.getFloorJson(), RotateFloorData.class);
                 break;
             case FLOOR_VALUE_ANIM:
-                data = new Gson().fromJson(item.getFloorJson(), ValueAnimFloorData.class);
+                data = GSON.fromJson(item.getFloorJson(), ValueAnimFloorData.class);
+                break;
+            case FLOOR_SINGLE_ANNOUNCEMENT:
+                AnnouncementData[] listAnnouncementData = GSON.fromJson(item.getFloorJson(), AnnouncementData[].class);
+                data = new ArrayList<>(Arrays.asList(listAnnouncementData));
                 break;
         }
         return data;
@@ -122,13 +128,7 @@ public class MixFloorListNormalHolderGenerator {
      * @return
      */
     private static FloorMatchDataInterface pickFloor(Context context, int viewType) {
-        FloorMatchDataInterface view = floorMap.get(viewType + "");
-        if (null != view) {
-            if (null != view.getParent()) {
-                ((ViewGroup) view.getParent()).removeView((View) view);
-            }
-            return view;
-        }
+        FloorMatchDataInterface view = null;
         switch (viewType) {
             case FLOOR_AUTO_ADAPTER:
                 view = new AutoAdapterFloor(context);
@@ -148,8 +148,10 @@ public class MixFloorListNormalHolderGenerator {
             case FLOOR_VALUE_ANIM:
                 view = new ValueAnimFloor(context);
                 break;
+            case FLOOR_SINGLE_ANNOUNCEMENT:
+                view = new BabelNewsRightsView(context);
+                break;
         }
-        floorMap.put(viewType + "", view);
         return view;
     }
 }

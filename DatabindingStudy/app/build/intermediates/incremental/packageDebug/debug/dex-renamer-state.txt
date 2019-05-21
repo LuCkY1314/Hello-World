@@ -1,4 +1,4 @@
-#Thu Feb 21 19:37:14 CST 2019
+#Tue May 14 18:38:49 CST 2019
 base.0=/Users/chansiqing/mine/Hello-World/DatabindingStudy/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

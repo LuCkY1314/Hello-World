@@ -5,6 +5,8 @@ import android.view.ViewGroup;
 
 import com.example.chansiqing.databindingstudy.floors.floorCommonInterface.FloorMatchDataInterface;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * 混合楼层holder
  *

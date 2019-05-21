@@ -1,6 +1,7 @@
 package com.example.chansiqing.databindingstudy.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -9,12 +10,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.chansiqing.databindingstudy.R;
+import com.example.chansiqing.databindingstudy.data.AnnouncementData;
+import com.example.chansiqing.databindingstudy.floors.floor.BabelNewsRightsView;
 import com.example.chansiqing.databindingstudy.floors.listAdapter.MyViewPagerAdapter;
+import com.example.chansiqing.databindingstudy.utils.JsonResource;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.example.chansiqing.databindingstudy.view.AutoWrapContentHeightViewPager;
+import com.example.chansiqing.databindingstudy.view.BabelSingleFlipperView;
 import com.example.chansiqing.databindingstudy.view.GridEachView;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,6 +36,7 @@ public class PageViewFragment extends BaseFragment {
     private MyViewPagerAdapter adapter;
     private List<GridEachView> list1, list2, list3;
     private int listNum;
+    private BabelNewsRightsView babelNewsRightsView;
 
     @Nullable
     @Override
@@ -73,6 +81,16 @@ public class PageViewFragment extends BaseFragment {
 
             }
         });
+        babelNewsRightsView = view.findViewById(R.id.babel);
+        AnnouncementData[] listAnnouncementData = new Gson().fromJson(JsonResource.singleAnnouncementFloorJson, AnnouncementData[].class);
+        final List<AnnouncementData> data = new ArrayList<>(Arrays.asList(listAnnouncementData));
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                babelNewsRightsView.adapterData(data);
+            }
+        },500);
         return view;
     }
 

@@ -14,10 +14,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
+import com.example.chansiqing.databindingstudy.data.AnnouncementData;
+import com.example.chansiqing.databindingstudy.floors.floor.BabelNewsRightsView;
 import com.example.chansiqing.databindingstudy.fragment.BaseFragment;
 import com.example.chansiqing.databindingstudy.fragment.HomeFragment;
 import com.example.chansiqing.databindingstudy.R;
@@ -28,6 +34,11 @@ import com.example.chansiqing.databindingstudy.fragment.PageViewFragment;
 import com.example.chansiqing.databindingstudy.utils.JsonResource;
 import com.example.chansiqing.databindingstudy.utils.UIUtil;
 import com.example.chansiqing.databindingstudy.view.TabView;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 启动页面
@@ -145,5 +156,34 @@ public class MainFrameActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_right, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.first:
+                createPopWindow();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 弹出popWindow
+     */
+    private void createPopWindow() {
+        BabelNewsRightsView view = new BabelNewsRightsView(this);
+        AnnouncementData[] listAnnouncementData = new Gson().fromJson(JsonResource.singleAnnouncementFloorJson, AnnouncementData[].class);
+        final List<AnnouncementData> data = new ArrayList<>(Arrays.asList(listAnnouncementData));
+        view.adapterData(data);
+        PopupWindow popupWindow = new PopupWindow(view, 200, 200, false);
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.rotate_image));
+        popupWindow.showAsDropDown(tabLl, 100, -600);
     }
 }
